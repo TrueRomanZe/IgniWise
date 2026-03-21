@@ -1,0 +1,128 @@
+# ============================================================================
+# IgniWise - Workflow de Actualización de Predicciones
+# ============================================================================
+# Este workflow se ejecuta cada 6 horas para:
+# 1. Obtener datos meteorológicos actuales
+# 2. Generar nuevas predicciones
+# 3. Actualizar web
+#
+# Trigger: Cron cada 6 horas + Manual
+# ============================================================================
+
+name: Actualizar Predicciones
+
+on:
+  # Ejecución automática cada 6 horas
+  schedule:
+    - cron: '0 */6 * * *'  # A las 00:00, 06:00, 12:00, 18:00 UTC
+  
+  # Ejecución manual
+  workflow_dispatch:
+  
+  # Push a main (para testing)
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/modeling/predict.py'
+      - '.github/workflows/update-predictions.yml'
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      # ======================================================================
+      # PASO 1: Checkout
+      # ======================================================================
+      - name: 📥 Checkout repositorio
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      # ======================================================================
+      # PASO 2: Configurar Python
+      # ======================================================================
+      - name: 🐍 Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      # ======================================================================
+      # PASO 3: Instalar dependencias
+      # ======================================================================
+      - name: 📦 Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas numpy scikit-learn geopandas shapely joblib
+      
+      # ======================================================================
+      # PASO 4: Verificar modelo existe
+      # ======================================================================
+      - name: 🔍 Verificar modelo
+        run: |
+          if [ ! -f models/random_forest_v1.pkl ]; then
+            echo "❌ Modelo no encontrado"
+            echo "Ejecuta primero el workflow 'Initial Setup'"
+            exit 1
+          fi
+          
+          echo "✓ Modelo encontrado"
+          ls -lh models/
+      
+      # ======================================================================
+      # PASO 5: Generar predicciones
+      # ======================================================================
+      - name: 🔮 Generar predicciones
+        env:
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+          AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
+        run: |
+          echo "Generando predicciones para todas las provincias..."
+          python src/modeling/predict.py
+          
+          echo "✓ Predicciones actualizadas"
+      
+      # ======================================================================
+      # PASO 6: Verificar cambios
+      # ======================================================================
+      - name: 📊 Verificar predicciones
+        run: |
+          if [ -f data/predictions/current_windows.json ]; then
+            echo "✓ Archivo de predicciones generado"
+            
+            # Mostrar resumen
+            python -c "
+import json
+with open('data/predictions/current_windows.json') as f:
+    data = json.load(f)
+    print(f'Provincias: {data[\"metadata\"][\"total_provincias\"]}')
+    print(f'Timestamp: {data[\"metadata\"][\"fecha_actualizacion\"]}')
+"
+          else
+            echo "❌ No se generó archivo de predicciones"
+            exit 1
+          fi
+      
+      # ======================================================================
+      # PASO 7: Commit y push
+      # ======================================================================
+      - name: 💾 Actualizar repositorio
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Añadir predicciones
+          git add data/predictions/
+          
+          # Solo commit si hay cambios
+          if git diff --staged --quiet; then
+            echo "ℹ️  No hay cambios en predicciones"
+          else
+            git commit -m "🌤️ Actualización automática predicciones - $(date +'%d/%m/%Y %H:%M UTC')"
+            git push
+            echo "✅ Predicciones actualizadas en repositorio"
+          fi
