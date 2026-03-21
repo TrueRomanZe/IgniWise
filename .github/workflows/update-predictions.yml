@@ -60,21 +60,34 @@ jobs:
           pip install -r requirements.txt
       
       # ======================================================================
-      # PASO 4: Verificar modelo existe
+      # PASO 4: Descargar modelo desde Zenodo
       # ======================================================================
-      - name: 🔍 Verificar modelo
+      - name: 🤖 Descargar modelo ML
         run: |
-          if [ ! -f models/random_forest_v1.pkl ]; then
-            echo "❌ Modelo no encontrado"
-            echo "Ejecuta primero el workflow 'Initial Setup'"
-            exit 1
-          fi
+          echo "Descargando modelo desde Zenodo..."
+          mkdir -p models
           
-          echo "✓ Modelo encontrado"
+          wget -O models/random_forest_v1.pkl \
+            "${{ secrets.ZENODO_MODEL_URL || 'https://zenodo.org/record/XXXXXXX/files/random_forest_v1.pkl' }}"
+          
+          echo "✓ Modelo descargado"
           ls -lh models/
       
       # ======================================================================
-      # PASO 5: Generar predicciones
+      # PASO 5: Descargar geodata desde Zenodo
+      # ======================================================================
+      - name: 🗺️ Descargar geodata
+        run: |
+          echo "Descargando geodata desde Zenodo..."
+          mkdir -p data/processed
+          
+          wget -O data/processed/provincias_geo.geojson \
+            "${{ secrets.ZENODO_GEODATA_URL || 'https://zenodo.org/record/XXXXXXX/files/provincias_geo.geojson' }}"
+          
+          echo "✓ Geodata descargada"
+      
+      # ======================================================================
+      # PASO 6: Generar predicciones
       # ======================================================================
       - name: 🔮 Generar predicciones
         env:
@@ -87,36 +100,39 @@ jobs:
           echo "✓ Predicciones actualizadas"
       
       # ======================================================================
-      # PASO 6: Verificar cambios
+      # PASO 7: Verificar predicciones
       # ======================================================================
       - name: 📊 Verificar predicciones
         run: |
           if [ -f data/predictions/current_windows.json ]; then
             echo "✓ Archivo de predicciones generado"
             
-            # Mostrar resumen
-            python -c "
-import json
-with open('data/predictions/current_windows.json') as f:
-    data = json.load(f)
-    print(f'Provincias: {data[\"metadata\"][\"total_provincias\"]}')
-    print(f'Timestamp: {data[\"metadata\"][\"fecha_actualizacion\"]}')
-"
+            # Verificar que tiene contenido válido
+            if [ -s data/predictions/current_windows.json ]; then
+              echo "✓ Archivo tiene contenido"
+              wc -l data/predictions/current_windows.json
+            else
+              echo "❌ Archivo está vacío"
+              exit 1
+            fi
           else
             echo "❌ No se generó archivo de predicciones"
             exit 1
           fi
       
       # ======================================================================
-      # PASO 7: Commit y push
+      # PASO 8: Commit y push
       # ======================================================================
       - name: 💾 Actualizar repositorio
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
+          # Sincronizar con remoto
+          git pull --rebase origin main || echo "Nothing to pull"
+          
           # Añadir predicciones
-          git add data/predictions/
+          git add data/predictions/current_windows.json
           
           # Solo commit si hay cambios
           if git diff --staged --quiet; then
