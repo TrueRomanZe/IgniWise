@@ -56,7 +56,7 @@ jobs:
           
           # Descargar training_data.csv
           wget -O data/processed/training_data.csv \
-            "${{ secrets.ZENODO_DATASET_URL || 'https://zenodo.org/record/XXXXXXX/files/training_data.csv' }}"
+            "${{ secrets.ZENODO_DATASET_URL || 'https://zenodo.org/records/19144668/files/training_data.csv' }}"
           
           echo "✓ Dataset descargado"
           ls -lh data/processed/
@@ -70,7 +70,7 @@ jobs:
           
           # Descargar provincias_geo.geojson
           wget -O data/processed/provincias_geo.geojson \
-            "${{ secrets.ZENODO_GEODATA_URL || 'https://zenodo.org/record/XXXXXXX/files/provincias_geo.geojson' }}"
+            "${{ secrets.ZENODO_GEODATA_URL || 'https://zenodo.org/records/19144668/files/provincias_geo.geojson' }}"
           
           echo "✓ Geodata descargada"
           ls -lh data/processed/
@@ -85,7 +85,7 @@ jobs:
           
           # Descargar random_forest_v1.pkl
           wget -O models/random_forest_v1.pkl \
-            "${{ secrets.ZENODO_MODEL_URL || 'https://zenodo.org/record/XXXXXXX/files/random_forest_v1.pkl' }}"
+            "${{ secrets.ZENODO_MODEL_URL || 'https://zenodo.org/records/19144668/files/random_forest_v1.pkl' }}"
           
           echo "✓ Modelo descargado"
           ls -lh models/
