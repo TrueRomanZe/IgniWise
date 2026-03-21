@@ -57,7 +57,7 @@ jobs:
       - name: 📦 Instalar dependencias
         run: |
           python -m pip install --upgrade pip
-          pip install requests pandas numpy scikit-learn geopandas shapely joblib
+          pip install -r requirements.txt
       
       # ======================================================================
       # PASO 4: Verificar modelo existe
