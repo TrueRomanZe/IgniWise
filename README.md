@@ -92,10 +92,14 @@ igniwise/
 │   ├── data_processing/    # Procesamiento y features
 │   ├── modeling/           # Entrenamiento y predicción
 │   └── utils/              # Utilidades
-├── .
-
-
-└── 
+├── .env.example
+├── .gitignore
+├── DATA_SOURCE.md
+├── LICENSE
+├── PRIVACY.md
+├── README.md
+├── index.html
+└── requirements.txt
 ```
 
 ---
