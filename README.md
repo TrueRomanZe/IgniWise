@@ -82,15 +82,20 @@ Ver [DATA_SOURCES.md](DATA_SOURCES.md) para licencias completas y atribuciones.
 
 ```
 igniwise/
+├── .github/workflows/      # Automatización (GitHub Actions)
+├── css/styles.css
+├── data/                   # Datos (raw, processed, predictions)
+├── js/app.js
+├── models/                 # Modelos ML entrenados
 ├── src/                    # Código fuente Python
 │   ├── data_collection/    # Descarga de datos
 │   ├── data_processing/    # Procesamiento y features
 │   ├── modeling/           # Entrenamiento y predicción
 │   └── utils/              # Utilidades
-├── web/                    # Frontend (HTML/CSS/JS)
-├── data/                   # Datos (raw, processed, predictions)
-├── models/                 # Modelos ML entrenados
-└── .github/workflows/      # Automatización (GitHub Actions)
+├── .
+
+
+└── 
 ```
 
 ---
