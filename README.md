@@ -9,7 +9,7 @@
 Sistema innovador que utiliza Machine Learning para predecir ventanas temporales seguras para realizar quemas prescritas en España, contribuyendo a la prevención de megaincendios forestales.
 
 🌐 **Web:** [igniwise.com](https://igniwise.com)  
-📊 **Dataset:** [DOI:10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.19144668)
+📊 **Dataset:** [DOI:10.5281/zenodo.19144668](https://doi.org/10.5281/zenodo.19144668)
 
 ---
 
