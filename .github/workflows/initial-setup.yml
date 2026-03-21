@@ -1,0 +1,121 @@
+# ============================================================================
+# IgniWise - Workflow de Setup Inicial
+# ============================================================================
+# Este workflow se ejecuta UNA VEZ para:
+# 1. Descargar dataset desde Zenodo
+# 2. Descargar modelo desde Zenodo
+# 3. Generar primera predicción
+#
+# Trigger: Manual (workflow_dispatch)
+# ============================================================================
+
+name: Initial Setup
+
+on:
+  workflow_dispatch:  # Solo ejecución manual
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      # ======================================================================
+      # PASO 1: Checkout del repositorio
+      # ======================================================================
+      - name: 📥 Checkout repositorio
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      # ======================================================================
+      # PASO 2: Configurar Python
+      # ======================================================================
+      - name: 🐍 Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      # ======================================================================
+      # PASO 3: Instalar dependencias
+      # ======================================================================
+      - name: 📦 Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas numpy scikit-learn geopandas shapely joblib
+      
+      # ======================================================================
+      # PASO 4: Descargar dataset de Zenodo
+      # ======================================================================
+      - name: 📊 Descargar dataset de Zenodo
+        run: |
+          echo "Descargando dataset de entrenamiento..."
+          mkdir -p data/processed
+          
+          # Descargar training_data.csv
+          wget -O data/processed/training_data.csv \
+            "${{ secrets.ZENODO_DATASET_URL || 'https://zenodo.org/record/XXXXXXX/files/training_data.csv' }}"
+          
+          echo "✓ Dataset descargado"
+          ls -lh data/processed/
+      
+      # ======================================================================
+      # PASO 5: Descargar geodata de Zenodo
+      # ======================================================================
+      - name: 🗺️ Descargar geodata
+        run: |
+          echo "Descargando geometrías provinciales..."
+          
+          # Descargar provincias_geo.geojson
+          wget -O data/processed/provincias_geo.geojson \
+            "${{ secrets.ZENODO_GEODATA_URL || 'https://zenodo.org/record/XXXXXXX/files/provincias_geo.geojson' }}"
+          
+          echo "✓ Geodata descargada"
+          ls -lh data/processed/
+      
+      # ======================================================================
+      # PASO 6: Descargar modelo de Zenodo
+      # ======================================================================
+      - name: 🤖 Descargar modelo ML
+        run: |
+          echo "Descargando modelo Random Forest..."
+          mkdir -p models
+          
+          # Descargar random_forest_v1.pkl
+          wget -O models/random_forest_v1.pkl \
+            "${{ secrets.ZENODO_MODEL_URL || 'https://zenodo.org/record/XXXXXXX/files/random_forest_v1.pkl' }}"
+          
+          echo "✓ Modelo descargado"
+          ls -lh models/
+      
+      # ======================================================================
+      # PASO 7: Generar primera predicción
+      # ======================================================================
+      - name: 🔮 Generar predicciones iniciales
+        env:
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+          AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
+        run: |
+          echo "Generando predicciones..."
+          python src/modeling/predict.py
+          
+          echo "✓ Predicciones generadas"
+          ls -lh data/predictions/
+      
+      # ======================================================================
+      # PASO 8: Commit y push
+      # ======================================================================
+      - name: 💾 Guardar archivos
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add models/ data/
+          
+          # Solo commit si hay cambios
+          git diff --staged --quiet || git commit -m "🚀 Setup inicial: modelo y primera predicción"
+          git push
+          
+          echo "✅ Setup inicial completado"
