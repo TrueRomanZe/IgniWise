@@ -94,7 +94,7 @@ igniwise/
 │   └── utils/              # Utilidades
 ├── .env.example
 ├── .gitignore
-├── DATA_SOURCE.md
+├── DATA_SOURCES.md
 ├── LICENSE
 ├── PRIVACY.md
 ├── README.md
