@@ -47,7 +47,7 @@ Visita: **[igniwise.com](https://igniwise.com)**
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/[TU-USUARIO]/igniwise.git
+git clone https://github.com/TrueRomanZe/igniwise.git
 cd igniwise
 
 # Crear entorno virtual
