@@ -68,7 +68,7 @@ jobs:
           mkdir -p models
           
           wget -O models/random_forest_v1.pkl \
-            "${{ secrets.ZENODO_MODEL_URL || 'https://zenodo.org/record/XXXXXXX/files/random_forest_v1.pkl' }}"
+            "${{ secrets.ZENODO_MODEL_URL || 'https://zenodo.org/record/19144668/files/random_forest_v1.pkl' }}"
           
           echo "✓ Modelo descargado"
           ls -lh models/
@@ -82,7 +82,7 @@ jobs:
           mkdir -p data/processed
           
           wget -O data/processed/provincias_geo.geojson \
-            "${{ secrets.ZENODO_GEODATA_URL || 'https://zenodo.org/record/XXXXXXX/files/provincias_geo.geojson' }}"
+            "${{ secrets.ZENODO_GEODATA_URL || 'https://zenodo.org/record/19144668/files/provincias_geo.geojson' }}"
           
           echo "✓ Geodata descargada"
       
