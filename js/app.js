@@ -53,7 +53,7 @@ async function loadPredictions() {
         console.log('Cargando predicciones...');
         
         // Cargar JSON de predicciones
-        const response = await fetch('../data/predictions/current_windows.json');
+        const response = await fetch('data/predictions/current_windows.json');
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
