@@ -9,7 +9,7 @@
 Sistema innovador que utiliza Machine Learning para predecir ventanas temporales seguras para realizar quemas prescritas en España, contribuyendo a la prevención de megaincendios forestales.
 
 🌐 **Web:** [igniwise.com](https://igniwise.com)  
-📊 **Dataset:** [DOI:10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX)
+📊 **Dataset:** [DOI:10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.19144668)
 
 ---
 
@@ -126,7 +126,7 @@ Para alertas oficiales, consulta: [AEMET](https://www.aemet.es)
 **GitHub:** [@TrueRomanZe](https://github.com/TrueRomanZe)  
 **Web:** [igniwise.com](https://igniwise.com)
 
-**Issues:** [github.com/[TU-USUARIO]/igniwise/issues](https://github.com/[TU-USUARIO]/igniwise/issues)
+**Issues:** [github.com/TrueRomanZe/igniwise/issues](https://github.com/TrueRomanZe/igniwise/issues)
 
 ---
 
