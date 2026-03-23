@@ -1,13 +1,13 @@
 """
-IgniWise - Generación de Predicciones
+IgniWise - Generación de Predicciones (VERSIÓN CORREGIDA)
+
+CAMBIOS CRÍTICOS vs. versión anterior:
+1. Features topográficas/vegetación FIJAS (no aleatorias)
+2. tipo_bosque con 4 valores [0,1,2,3] como en entrenamiento
+3. Pendientes coherentes por provincia
+4. Logging mejorado
+
 Genera predicciones de ventanas de quema para todas las provincias de España
-
-Este script:
-1. Obtiene datos meteorológicos actuales (OpenWeatherMap)
-2. Calcula features (FWI, etc.)
-3. Predice ventana de quema para cada provincia
-4. Genera JSON con resultados para la web
-
 Se ejecuta automáticamente cada 6 horas vía GitHub Actions
 """
 
@@ -32,7 +32,26 @@ from src.data_processing.calculate_fwi import calculate_fwi_components
 logger = setup_logger(__name__, 'predict')
 
 # ============================================================================
-# FUNCIONES DE OBTENCIÓN DE DATOS
+# CONSTANTES Y VALORES POR DEFECTO
+# ============================================================================
+
+# Provincias montañosas (pendiente alta)
+MOUNTAIN_PROVINCES = [
+    'Ávila', 'Soria', 'Teruel', 'Granada', 'Huesca', 'León',
+    'Asturias', 'Cantabria', 'Segovia', 'Burgos', 'Palencia'
+]
+
+# Valores por defecto coherentes con entrenamiento
+DEFAULT_ELEVACION = 660  # Elevación media España
+DEFAULT_PENDIENTE_MONTANA = 25  # Promedio zonas montañosas
+DEFAULT_PENDIENTE_LLANO = 8     # Promedio zonas llanas
+DEFAULT_ORIENTACION = 180       # Sur (más común)
+DEFAULT_NDVI = 0.55            # NDVI primavera/otoño
+DEFAULT_TIPO_BOSQUE = 1        # Encinar (más común España)
+DEFAULT_DIAS_SIN_LLUVIA = 7    # Conservador
+
+# ============================================================================
+# FUNCIONES DE CARGA
 # ============================================================================
 
 def load_model():
@@ -50,6 +69,10 @@ def load_model():
     model = joblib.load(model_file)
     logger.info(f"  ✓ Modelo cargado: {model_file.name}")
     
+    # Verificar encoding de clases
+    logger.info(f"  ✓ Clases del modelo: {model.classes_}")
+    logger.info(f"  ✓ Número de árboles: {model.n_estimators}")
+    
     return model
 
 
@@ -58,14 +81,14 @@ def load_provincial_data() -> dict:
     Carga datos geográficos de provincias
     
     Returns:
-        Diccionario {provincia: {lat, lon, elevacion}}
+        Diccionario {provincia: {lat, lon, elevacion, ...}}
     """
     logger.info("Cargando datos provinciales...")
     
     geo_file = DATA_PROCESSED / 'provincias_geo.geojson'
     
     if not geo_file.exists():
-        logger.warning(f"  ⚠ Geodata no encontrada, usando coordenadas por defecto")
+        logger.warning(f"  ⚠ Geodata no encontrada, usando valores por defecto")
         return {}
     
     import geopandas as gpd
@@ -74,10 +97,18 @@ def load_provincial_data() -> dict:
     # Crear diccionario provincia -> datos
     provincial_data = {}
     for idx, row in gdf.iterrows():
+        # Determinar pendiente según tipo de provincia
+        is_mountain = row['nombre'] in MOUNTAIN_PROVINCES
+        default_pendiente = DEFAULT_PENDIENTE_MONTANA if is_mountain else DEFAULT_PENDIENTE_LLANO
+        
         provincial_data[row['nombre']] = {
             'lat': row['centroide_lat'],
             'lon': row['centroide_lon'],
-            'elevacion': row.get('elevacion', 500)
+            'elevacion': row.get('elevacion', DEFAULT_ELEVACION),
+            'pendiente': row.get('pendiente', default_pendiente),
+            'orientacion': row.get('orientacion', DEFAULT_ORIENTACION),
+            'tipo_bosque': row.get('tipo_bosque', DEFAULT_TIPO_BOSQUE),
+            'ndvi': row.get('ndvi', DEFAULT_NDVI)
         }
     
     logger.info(f"  ✓ Cargados datos de {len(provincial_data)} provincias")
@@ -129,31 +160,15 @@ def get_current_weather(lat: float, lon: float, provincia: str) -> dict:
         return None
 
 
-def calculate_dias_sin_lluvia(provincia: str) -> int:
-    """
-    Calcula días consecutivos sin lluvia
-    
-    En producción: Consultar histórico de AEMET
-    Aquí: Estimación simplificada
-    
-    Args:
-        provincia: Nombre de provincia
-        
-    Returns:
-        Número de días sin lluvia (estimado)
-    """
-    # TODO: En producción, consultar AEMET API
-    # Para desarrollo, usar valor aleatorio realista
-    return np.random.randint(0, 15)
-
-
 # ============================================================================
-# FUNCIONES DE PREDICCIÓN
+# FUNCIONES DE PREPARACIÓN DE FEATURES
 # ============================================================================
 
 def prepare_features(weather: dict, provincia_data: dict, provincia: str) -> pd.DataFrame:
     """
     Prepara features para predicción siguiendo estructura del modelo
+    
+    CRÍTICO: Usa valores FIJOS coherentes con entrenamiento, NO aleatorios
     
     Args:
         weather: Datos meteorológicos actuales
@@ -172,46 +187,51 @@ def prepare_features(weather: dict, provincia_data: dict, provincia: str) -> pd.
         month=datetime.now().month
     )
     
-    # Días sin lluvia
-    dias_sin_lluvia = calculate_dias_sin_lluvia(provincia)
+    # Determinar pendiente según tipo de provincia
+    is_mountain = provincia in MOUNTAIN_PROVINCES
+    pendiente_default = DEFAULT_PENDIENTE_MONTANA if is_mountain else DEFAULT_PENDIENTE_LLANO
     
     # Preparar todas las features en el orden correcto
     features = {
-        # Meteorológicas inmediatas
+        # ===== METEOROLÓGICAS INMEDIATAS (5) =====
         'temperatura': weather['temperatura'],
         'humedad': weather['humedad'],
         'viento_velocidad': weather['viento_velocidad'],
         'viento_direccion': weather['viento_direccion'],
         'precip_24h': 0,  # Simplificado
         
-        # Meteorológicas acumuladas
-        'dias_sin_lluvia': dias_sin_lluvia,
+        # ===== METEOROLÓGICAS ACUMULADAS (4) =====
+        'dias_sin_lluvia': DEFAULT_DIAS_SIN_LLUVIA,  # FIJO, no aleatorio
         'precip_7d': 0,  # Simplificado
         'precip_30d': 0,  # Simplificado
-        'temp_max_3d': weather['temperatura'] + np.random.uniform(2, 5),
+        'temp_max_3d': weather['temperatura'] + 3,  # Estimación FIJA (+3°C)
         
-        # Índices FWI
+        # ===== ÍNDICES FWI (4) - LOS MÁS IMPORTANTES =====
         'fwi': fwi_components['fwi'],
         'ffmc': fwi_components['ffmc'],
         'dmc': fwi_components['dmc'],
         'dc': fwi_components['dc'],
         
-        # Topográficas
-        'elevacion': provincia_data.get('elevacion', 500),
-        'pendiente': np.random.uniform(5, 20),  # Simplificado
-        'orientacion': np.random.choice([0, 90, 180, 270]),
+        # ===== TOPOGRÁFICAS (3) - FIJAS por provincia =====
+        'elevacion': provincia_data.get('elevacion', DEFAULT_ELEVACION),
+        'pendiente': provincia_data.get('pendiente', pendiente_default),
+        'orientacion': provincia_data.get('orientacion', DEFAULT_ORIENTACION),
         
-        # Vegetación
-        'ndvi': 0.6,  # Simplificado
-        'tipo_bosque': np.random.choice([0, 1, 2]),
+        # ===== VEGETACIÓN (2) - FIJAS por provincia =====
+        'ndvi': provincia_data.get('ndvi', DEFAULT_NDVI),
+        'tipo_bosque': provincia_data.get('tipo_bosque', DEFAULT_TIPO_BOSQUE),
         
-        # Temporales
+        # ===== TEMPORALES (2) =====
         'mes': datetime.now().month,
         'dia_año': datetime.now().timetuple().tm_yday
     }
     
     return pd.DataFrame([features])
 
+
+# ============================================================================
+# FUNCIONES DE PREDICCIÓN
+# ============================================================================
 
 def predict_for_province(model, provincia: str, provincia_data: dict) -> dict:
     """
@@ -248,6 +268,8 @@ def predict_for_province(model, provincia: str, provincia_data: dict) -> dict:
     probas = model.predict_proba(X)[0]
     
     # Mapeo de predicción a categoría
+    # VERIFICADO: Coincide con feature_engineering.py
+    # 0 = SEGURA, 1 = MARGINAL, 2 = PELIGROSA
     categorias = {
         0: {'nombre': 'SEGURA', 'color': COLOR_SEGURA},
         1: {'nombre': 'MARGINAL', 'color': COLOR_MARGINAL},
