@@ -28,7 +28,7 @@ Las **quemas prescritas** son esenciales para prevenir megaincendios forestales,
 ## ✨ Características
 
 - 🤖 **Machine Learning:** Random Forest entrenado con 10,000+ incendios históricos
-- 🗺️ **Cobertura nacional:** España peninsular completa (50 provincias)
+- 🗺️ **Cobertura nacional:** España peninsular completa (48 provincias)
 - 📊 **Predicciones actualizadas:** Automáticamente cada 6 horas
 - 🎨 **Visualización intuitiva:** Código de colores (🟢 seguro / 🟡 precaución / 🔴 peligroso)
 - ⚡ **Totalmente automatizado:** Sin intervención manual
@@ -70,9 +70,11 @@ python src/modeling/predict.py
 ## 📊 Fuentes de Datos
 
 - **Incendios históricos:** MITECO (Gobierno de España) - 2001-2024
-- **Meteorología:** OpenWeatherMap + AEMET
-- **Topografía:** IGN España (MDT 25m)
-- **Vegetación:** Copernicus Sentinel-2 (NDVI)
+- **Meteorología en tiempo real:** OpenWeatherMap API
+- **Topografía:** Copernicus DEM GLO-30 (elevación, pendiente, orientación)
+- **Vegetación:** Copernicus Sentinel-2 via Google Earth Engine (NDVI)
+- **Cobertura del suelo:** CORINE Land Cover 2018 (Copernicus / CNIG)
+- **Metodología FWI:** Van Wagner, C.E. (1987), Canadian Forest Service
 
 Ver [DATA_SOURCES.md](DATA_SOURCES.md) para licencias completas y atribuciones.
 
@@ -104,9 +106,9 @@ igniwise/
 
 ---
 
-## 🔒 Privacidad
+## 🔒 Privacidad y Analítica
 
-IgniWise respeta tu privacidad. Solo recopilamos estadísticas anónimas agregadas mediante Google Analytics (con anonimización de IP activada).
+IgniWise respeta tu privacidad. Utilizamos Google Analytics 4 configurado con las máximas restricciones de privacidad: anonimización de IP activada, Google Signals desactivado y personalización de anuncios desactivada. Solo recopilamos estadísticas agregadas y anónimas para mejorar la aplicación.
 
 Ver [PRIVACY.md](PRIVACY.md) para detalles completos.
 
@@ -142,9 +144,9 @@ Para alertas oficiales, consulta: [AEMET](https://www.aemet.es)
 ## 🙏 Agradecimientos
 
 - MITECO - Datos de incendios forestales
-- OpenWeatherMap & AEMET - Datos meteorológicos
-- IGN España - Datos geográficos y topográficos
-- Copernicus Programme - Datos satelitales
+- OpenWeatherMap - Datos meteorológicos en tiempo real
+- Copernicus Programme (ESA) - DEM GLO-30, Sentinel-2, CORINE Land Cover
+- IGN España - Datos geográficos oficiales
 - CERN & Zenodo - Publicación científica del dataset
 
 ---
@@ -160,8 +162,8 @@ Si usas IgniWise o su dataset en investigación, por favor cita:
                    Fires (2001-2024)}},
   year         = 2026,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.XXXXXXX},
-  url          = {https://doi.org/10.5281/zenodo.XXXXXXX}
+  doi          = {10.5281/zenodo.19144668},
+  url          = {https://doi.org/10.5281/zenodo.19144668}
 }
 ```
 
@@ -169,4 +171,4 @@ Si usas IgniWise o su dataset en investigación, por favor cita:
 
 **🔥 Desarrollado para la prevención de incendios forestales en España**
 
-*Última actualización: Marzo 2026*
+*Última actualización: Mayo 2026*
