@@ -15,6 +15,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://igniwise.com">
     
+    <!-- Google tag (gtag.js) - Configurado con privacidad mejorada -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSEK44L6WN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // Configuración con máximo respeto a la privacidad
+      gtag('config', 'G-LSEK44L6WN', {
+        'anonymize_ip': true,                       // Anonimizar dirección IP
+        'allow_google_signals': false,              // Sin seguimiento entre dispositivos
+        'allow_ad_personalization_signals': false   // Sin personalización de anuncios
+      });
+    </script>
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
