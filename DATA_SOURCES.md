@@ -39,7 +39,7 @@ Ecológica y el Reto Demográfico del Gobierno de España
 
 **Fuente:** OpenWeatherMap API  
 **URL:** https://openweathermap.org  
-**Tipo:** Datos meteorológicos en tiempo real y históricos  
+**Tipo:** Datos meteorológicos en tiempo real  
 
 **Datos utilizados:**
 - Temperatura actual (°C)
@@ -89,8 +89,7 @@ Datos meteorológicos: AEMET - Agencia Estatal de Meteorología
 
 **Datos utilizados:**
 - Límites administrativos provinciales (shapefile)
-- Modelo Digital del Terreno (MDT) 25m
-- Elevación, pendiente, orientación
+- Modelo Digital del Terreno (MDT) 25m — elevación, pendiente, orientación
 
 **Licencia:** CC BY 4.0 (Creative Commons Atribución)  
 **Condiciones:** Uso libre con atribución  
@@ -102,61 +101,66 @@ Datos geográficos: IGN - Instituto Geográfico Nacional de España
 
 **Términos completos:** https://www.ign.es/web/resources/docs/IGNCnig/LOPD-Aviso-Legal.pdf
 
-### ESRI España
+### Copernicus DEM (Digital Elevation Model)
 
-**Fuente:** Living Atlas of the World  
-**URL:** https://livingatlas.arcgis.com/  
+**Fuente:** Copernicus Land Monitoring Service / ESA  
+**URL:** https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model  
+**Resolución:** GLO-30 (30 metros)  
 
 **Datos utilizados:**
-- Límites administrativos (respaldo)
-- Capas base de referencia
+- Elevación del terreno por provincia
+- Pendiente media provincial
+- Orientación predominante
 
-**Licencia:** Varios (según capa, generalmente uso libre con atribución)  
+**Licencia:** Copernicus DEM — acceso libre con atribución  
 **Atribución requerida:**
 ```
-Fuente: ESRI España
+Elevation data: Copernicus DEM GLO-30 © DLR e.V. 2010-2014 
+and © Airbus Defence and Space GmbH 2014-2018
 ```
+
+**Términos completos:** https://spacedata.copernicus.eu/documents/20126/0/CSCDA_ESA_Mission-specific+Annex.pdf
 
 ---
 
 ## 🛰️ Datos de Vegetación Satelital
 
-### Copernicus Sentinel-2
+### Google Earth Engine + Copernicus Sentinel-2
 
-**Fuente:** Copernicus Open Access Hub  
-**URL:** https://scihub.copernicus.eu/  
-**Tipo:** Imágenes satelitales multiespectrales  
+**Fuente:** Copernicus Sentinel-2 procesado vía Google Earth Engine  
+**URL:** https://earthengine.google.com  
+**Tipo:** Índice de vegetación calculado a partir de imágenes multiespectrales  
 
 **Datos utilizados:**
-- NDVI (Normalized Difference Vegetation Index)
-- Resolución: 10 metros
-- Frecuencia: Cada 5 días
+- NDVI estacional por provincia (media anual)
+- Resolución base: 10 metros (Sentinel-2 Banda 4 y Banda 8)
 
-**Licencia:** Copernicus Sentinel Data - Acceso completo, abierto y gratuito  
-**Condiciones:** Uso libre con atribución  
+**Licencia:** Copernicus Sentinel Data — acceso completo, abierto y gratuito  
 **Atribución requerida:**
 ```
-Datos satelitales: Copernicus Sentinel-2 imagery
-Contains modified Copernicus Sentinel data [Year]
+Vegetation index: Contains modified Copernicus Sentinel data [2024]
+processed via Google Earth Engine
 ```
 
 **Términos completos:** https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice
 
-### MAPAMA - Mapa Forestal de España
+### CORINE Land Cover 2018
 
-**Fuente:** Ministerio de Agricultura  
-**URL:** https://www.mapa.gob.es/  
-**Tipo:** Clasificación de tipos de vegetación  
+**Fuente:** Copernicus Land Monitoring Service / Centro Nacional de Información Geográfica (CNIG)  
+**URL:** https://centrodedescargas.cnig.es  
+**Tipo:** Clasificación de usos y coberturas del suelo  
 
 **Datos utilizados:**
-- Tipos de bosque (pinar, encinar, matorral, etc.)
-- Carga de combustible vegetal estimada
+- Tipo de cobertura forestal por provincia (clases 311-324)
+- Clasificación: bosque de coníferas, frondosas, mixto, matorral
 
-**Licencia:** Datos Abiertos del Gobierno de España  
+**Licencia:** Copernicus Land Monitoring Service — uso libre con atribución  
 **Atribución requerida:**
 ```
-Mapa Forestal: MAPAMA - Ministerio de Agricultura, Pesca y Alimentación
+Land cover: CORINE Land Cover 2018 — Copernicus Land Monitoring Service
 ```
+
+**Términos completos:** https://land.copernicus.eu/pan-european/corine-land-cover/clc2018
 
 ---
 
@@ -183,12 +187,14 @@ Mapa Forestal: MAPAMA - Ministerio de Agricultura, Pesca y Alimentación
 ### Sistema Canadiense FWI (Fire Weather Index)
 
 **Fuente:** Canadian Forest Service  
-**Referencia:** Van Wagner, C.E. 1987. Development and structure of the Canadian Forest Fire Weather Index System. Forestry Technical Report 35.  
+**Referencia:** Van Wagner, C.E. 1987. Development and structure of the Canadian Forest Fire Weather Index System. Forestry Technical Report 35. Canadian Forestry Service, Ottawa.  
+**DOI:** https://cfs.nrcan.gc.ca/publications?id=19927  
 
 **Licencia:** Dominio público (metodología científica publicada)  
 **Atribución recomendada:**
 ```
-Fire Weather Index: Canadian Forest Fire Weather Index System (Van Wagner, 1987)
+Fire Weather Index: Canadian Forest Fire Weather Index System
+Van Wagner, C.E. (1987). Forestry Technical Report 35, Canadian Forest Service.
 ```
 
 ---
@@ -203,11 +209,13 @@ Copyright © 2026 Sergio Romera Martínez
 
 Fuentes de datos:
 - Incendios forestales: MITECO (Gobierno de España)
-- Meteorología: OpenWeatherMap y AEMET
-- Geografía: IGN España © Instituto Geográfico Nacional
-- Vegetación satelital: Copernicus Sentinel-2
+- Meteorología en tiempo real: OpenWeatherMap
+- Geografía y topografía: IGN España © Instituto Geográfico Nacional
+- Modelo de elevación: Copernicus DEM GLO-30
+- Índice de vegetación: Copernicus Sentinel-2 vía Google Earth Engine
+- Cobertura del suelo: CORINE Land Cover 2018 (Copernicus / CNIG)
 - Mapa base: © OpenStreetMap contributors
-- Metodología: Canadian FWI System (Van Wagner, 1987)
+- Metodología FWI: Van Wagner, C.E. (1987), Canadian Forest Service
 ```
 
 ---
@@ -224,10 +232,10 @@ Ver [LICENSE](LICENSE) para términos completos.
 
 ## 🔗 Enlaces Útiles
 
-- **Repositorio GitHub:** https://github.com/[TU-USUARIO]/igniwise
-- **Dataset Zenodo:** https://doi.org/10.5281/zenodo.XXXXXXX
+- **Repositorio GitHub:** https://github.com/TrueRomanZe/igniwise
+- **Dataset Zenodo:** https://doi.org/10.5281/zenodo.19144668
 - **Web oficial:** https://igniwise.com
-- **Documentación:** https://github.com/[TU-USUARIO]/igniwise/blob/main/README.md
+- **Documentación:** https://github.com/TrueRomanZe/igniwise/blob/main/README.md
 
 ---
 
@@ -251,5 +259,5 @@ IgniWise cumple con todas las licencias de las fuentes de datos utilizadas:
 
 ---
 
-**Última actualización:** Marzo 2026  
+**Última actualización:** Mayo 2026  
 **Autor:** Sergio Romera Martínez
