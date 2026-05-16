@@ -38,7 +38,7 @@ jobs:
       # PASO 1: Checkout (incluye modelo y geodata del repo)
       # ======================================================================
       - name: 📥 Checkout repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -46,7 +46,7 @@ jobs:
       # PASO 2: Configurar Python
       # ======================================================================
       - name: 🐍 Configurar Python 3.11
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
