@@ -1,48 +1,47 @@
 # ============================================================================
 # IgniWise - Workflow de Actualización de Predicciones
 # ============================================================================
-# Este workflow se ejecuta cada 6 horas para:
-# 1. Obtener datos meteorológicos actuales
-# 2. Generar nuevas predicciones
-# 3. Actualizar web
+# Ejecuta predict.py cada 6 horas para actualizar current_windows.json.
 #
-# Trigger: Cron cada 6 horas + Manual
+# v2: el modelo y los datos geográficos se leen directamente del repositorio
+# (ya no se descargan de Zenodo en cada ejecución). Esto garantiza que los
+# archivos actualizados en el repo (provincias_geo.geojson, random_forest_v1.pkl)
+# se usen siempre en las predicciones.
+#
+# Trigger: Cron cada 6 horas + Manual + Push a main
 # ============================================================================
 
 name: Actualizar Predicciones
 
 on:
-  # Ejecución automática cada 6 horas
   schedule:
-    - cron: '0 */6 * * *'  # A las 00:00, 06:00, 12:00, 18:00 UTC
-  
-  # Ejecución manual
+    - cron: '0 */6 * * *'   # 00:00, 06:00, 12:00, 18:00 UTC
   workflow_dispatch:
-  
-  # Push a main (para testing)
   push:
     branches:
       - main
     paths:
       - 'src/modeling/predict.py'
+      - 'data/processed/provincias_geo.geojson'
+      - 'models/random_forest_v1.pkl'
       - '.github/workflows/update-predictions.yml'
 
 jobs:
   predict:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
-    
+
     steps:
       # ======================================================================
-      # PASO 1: Checkout
+      # PASO 1: Checkout (incluye modelo y geodata del repo)
       # ======================================================================
       - name: 📥 Checkout repositorio
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       # ======================================================================
       # PASO 2: Configurar Python
       # ======================================================================
@@ -50,7 +49,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       # ======================================================================
       # PASO 3: Instalar dependencias
       # ======================================================================
@@ -58,36 +57,28 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      
+
       # ======================================================================
-      # PASO 4: Descargar modelo desde Zenodo
+      # PASO 4: Verificar que los archivos clave existen en el repo
       # ======================================================================
-      - name: 🤖 Descargar modelo ML
+      - name: 🔍 Verificar archivos
         run: |
-          echo "Descargando modelo desde Zenodo..."
-          mkdir -p models
+          echo "Verificando archivos necesarios..."
           
-          wget -O models/random_forest_v1.pkl \
-            "${{ secrets.ZENODO_MODEL_URL || 'https://zenodo.org/record/19144668/files/random_forest_v1.pkl' }}"
+          if [ ! -f models/random_forest_v1.pkl ]; then
+            echo "❌ models/random_forest_v1.pkl no encontrado"
+            exit 1
+          fi
+          echo "✓ Modelo encontrado: $(ls -lh models/random_forest_v1.pkl | awk '{print $5}')"
           
-          echo "✓ Modelo descargado"
-          ls -lh models/
-      
+          if [ ! -f data/processed/provincias_geo.geojson ]; then
+            echo "❌ data/processed/provincias_geo.geojson no encontrado"
+            exit 1
+          fi
+          echo "✓ Geodata encontrada: $(ls -lh data/processed/provincias_geo.geojson | awk '{print $5}')"
+
       # ======================================================================
-      # PASO 5: Descargar geodata desde Zenodo
-      # ======================================================================
-      - name: 🗺️ Descargar geodata
-        run: |
-          echo "Descargando geodata desde Zenodo..."
-          mkdir -p data/processed
-          
-          wget -O data/processed/provincias_geo.geojson \
-            "${{ secrets.ZENODO_GEODATA_URL || 'https://zenodo.org/record/19144668/files/provincias_geo.geojson' }}"
-          
-          echo "✓ Geodata descargada"
-      
-      # ======================================================================
-      # PASO 6: Generar predicciones
+      # PASO 5: Generar predicciones
       # ======================================================================
       - name: 🔮 Generar predicciones
         env:
@@ -96,49 +87,39 @@ jobs:
         run: |
           echo "Generando predicciones para todas las provincias..."
           python src/modeling/predict.py
-          
           echo "✓ Predicciones actualizadas"
-      
+
       # ======================================================================
-      # PASO 7: Verificar predicciones
+      # PASO 6: Verificar predicciones generadas
       # ======================================================================
       - name: 📊 Verificar predicciones
         run: |
-          if [ -f data/predictions/current_windows.json ]; then
-            echo "✓ Archivo de predicciones generado"
-            
-            # Verificar que tiene contenido válido
-            if [ -s data/predictions/current_windows.json ]; then
-              echo "✓ Archivo tiene contenido"
-              wc -l data/predictions/current_windows.json
-            else
-              echo "❌ Archivo está vacío"
-              exit 1
-            fi
-          else
+          if [ ! -f data/predictions/current_windows.json ]; then
             echo "❌ No se generó archivo de predicciones"
             exit 1
           fi
-      
+          if [ ! -s data/predictions/current_windows.json ]; then
+            echo "❌ Archivo de predicciones está vacío"
+            exit 1
+          fi
+          echo "✓ Predicciones generadas correctamente"
+          wc -l data/predictions/current_windows.json
+
       # ======================================================================
-      # PASO 8: Commit y push
+      # PASO 7: Commit y push (solo si hay cambios)
       # ======================================================================
       - name: 💾 Actualizar repositorio
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # Sincronizar con remoto
           git pull --rebase origin main || echo "Nothing to pull"
-          
-          # Añadir predicciones
           git add data/predictions/current_windows.json
           
-          # Solo commit si hay cambios
           if git diff --staged --quiet; then
-            echo "ℹ️  No hay cambios en predicciones"
+            echo "ℹ️  Sin cambios en predicciones"
           else
-            git commit -m "🌤️ Actualización automática predicciones - $(date +'%d/%m/%Y %H:%M UTC')"
+            git commit -m "🔮 Predicciones actualizadas - $(date +'%d/%m/%Y %H:%M UTC')"
             git push
-            echo "✅ Predicciones actualizadas en repositorio"
+            echo "✅ Predicciones guardadas en repositorio"
           fi
