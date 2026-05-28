@@ -2,13 +2,6 @@
 # IgniWise - Workflow de Actualización de Predicciones
 # ============================================================================
 # Ejecuta predict.py cada 6 horas para actualizar current_windows.json.
-#
-# v2: el modelo y los datos geográficos se leen directamente del repositorio
-# (ya no se descargan de Zenodo en cada ejecución). Esto garantiza que los
-# archivos actualizados en el repo (provincias_geo.geojson, random_forest_v1.pkl)
-# se usen siempre en las predicciones.
-#
-# Trigger: Cron cada 6 horas + Manual + Push a main
 # ============================================================================
 
 name: Actualizar Predicciones
