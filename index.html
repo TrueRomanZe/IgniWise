@@ -22,11 +22,10 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      // Configuración con máximo respeto a la privacidad
       gtag('config', 'G-LSEK44L6WN', {
-        'anonymize_ip': true,                       // Anonimizar dirección IP
-        'allow_google_signals': false,              // Sin seguimiento entre dispositivos
-        'allow_ad_personalization_signals': false   // Sin personalización de anuncios
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false
       });
     </script>
 
@@ -102,8 +101,10 @@
             <div class="footer-content">
                 <p>
                     <strong>IgniWise</strong> - Sistema de predicción de ventanas de quema prescrita<br>
-                    Datos: <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a> | 
-                    Modelo: Random Forest (Accuracy: 87%)<br>
+                    Meteorología: <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a> |
+                    Modelo: Random Forest + FWI (Van Wagner, 1987)<br>
+                    Topografía: <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank">Copernicus DEM</a> |
+                    Vegetación: <a href="https://land.copernicus.eu/pan-european/corine-land-cover/clc2018" target="_blank">CORINE 2018</a> + <a href="https://earthengine.google.com" target="_blank">Sentinel-2</a><br>
                     Dataset: <a href="https://doi.org/10.5281/zenodo.19144668" target="_blank">DOI:10.5281/zenodo.19144668</a>
                 </p>
                 <div class="footer-links">
