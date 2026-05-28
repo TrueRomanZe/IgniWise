@@ -1,6 +1,16 @@
 # ============================================================================
 # IgniWise - Workflow de Setup Inicial
 # ============================================================================
+# Se ejecuta UNA SOLA VEZ manualmente para generar la primera predicción.
+#
+# Requiere en el repositorio:
+#   - models/random_forest_v1.pkl
+#   - data/processed/provincias_geo.geojson
+#
+# Solo se requiere OPENWEATHER_API_KEY como secret.
+#
+# Trigger: Manual (workflow_dispatch)
+# ============================================================================
 
 name: Initial Setup
 
@@ -16,7 +26,7 @@ jobs:
 
     steps:
       # ======================================================================
-      # PASO 1: Checkout (incluye todos los archivos del repo)
+      # PASO 1: Checkout
       # ======================================================================
       - name: 📥 Checkout repositorio
         uses: actions/checkout@v6
@@ -47,33 +57,29 @@ jobs:
           echo "============================================"
           echo "Verificando archivos necesarios en el repo:"
           echo "============================================"
-          
-          # Modelo
+
           if [ -f models/random_forest_v1.pkl ]; then
             echo "✓ Modelo: $(ls -lh models/random_forest_v1.pkl | awk '{print $5}')"
           else
             echo "❌ FALTA: models/random_forest_v1.pkl"
-            echo "   Sube el modelo generado en el Colab notebook."
             exit 1
           fi
-          
-          # Geodata
+
           if [ -f data/processed/provincias_geo.geojson ]; then
             echo "✓ Geodata: $(ls -lh data/processed/provincias_geo.geojson | awk '{print $5}')"
           else
             echo "❌ FALTA: data/processed/provincias_geo.geojson"
             exit 1
           fi
-          
-          # Training data
+
           if [ -f data/processed/training_data.csv ]; then
             echo "✓ Training data: $(ls -lh data/processed/training_data.csv | awk '{print $5}')"
           else
             echo "⚠ data/processed/training_data.csv no encontrado (opcional para predict)"
           fi
-          
+
           echo "============================================"
-          echo "✅ Todos los archivos verificados"
+          echo "✅ Verificación completada"
 
       # ======================================================================
       # PASO 5: Generar primera predicción
@@ -81,7 +87,6 @@ jobs:
       - name: 🔮 Generar predicciones iniciales
         env:
           OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
-          AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
         run: |
           echo "Generando predicciones para todas las provincias..."
           python src/modeling/predict.py
@@ -95,9 +100,9 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          
+
           git add data/predictions/
-          git diff --staged --quiet || git commit -m "🚀 Setup inicial: primera predicción con datos reales"
+          git diff --staged --quiet || git commit -m "🚀 Setup inicial: primera predicción generada"
           git push
-          
+
           echo "✅ Setup inicial completado"
