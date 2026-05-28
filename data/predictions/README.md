@@ -34,10 +34,3 @@ Predicciones de ventanas de quema para todas las provincias.
 }
 ```
 
----
-
-## ✅ Este archivo SÍ se sube a GitHub
-
-Es el único archivo de `data/` que se versiona en Git.
-
-Actualizado automáticamente por GitHub Actions cada 6 horas.
