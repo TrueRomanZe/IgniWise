@@ -15,20 +15,20 @@ ENV/
 *.sublime-*
 .DS_Store
 
-# Datos brutos (muy grandes, no subir)
+# Datos brutos (muy grandes, no subir a GitHub)
 data/raw/incendios_miteco/*.xlsx
 data/raw/incendios_miteco/*.xls
-data/raw/limites_provinciales/*.shp
-data/raw/limites_provinciales/*.dbf
-data/raw/topografia/*.tif
+data/raw/incendios_miteco/*.ttl
+data/raw/incendios_miteco/*.csv
+data/raw/limites_provinciales/
+data/raw/topografia/
 data/raw/meteorologia/
 
 # Environment
 .env
 
-# Jupyter
+# Jupyter checkpoints (pero sí subir los .ipynb)
 .ipynb_checkpoints/
-*.ipynb
 
 # Testing
 .pytest_cache/
