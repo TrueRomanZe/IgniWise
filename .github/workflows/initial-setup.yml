@@ -1,16 +1,6 @@
 # ============================================================================
 # IgniWise - Workflow de Setup Inicial
 # ============================================================================
-# Se ejecuta UNA SOLA VEZ manualmente para generar la primera predicción.
-#
-# v2: el modelo y los datos geográficos se leen del repositorio directamente.
-# Ya no se descargan de Zenodo. Asegúrate de haber subido al repo:
-#   - models/random_forest_v1.pkl
-#   - data/processed/provincias_geo.geojson
-#   - data/processed/training_data.csv
-#
-# Trigger: Manual (workflow_dispatch)
-# ============================================================================
 
 name: Initial Setup
 
