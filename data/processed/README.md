@@ -32,4 +32,4 @@ Estos archivos se descargan **desde Zenodo** en GitHub Actions.
 
 **NO** se almacenan en GitHub (ver `.gitignore`).
 
-**DOI del dataset:** 10.5281/zenodo.XXXXXXX (actualizar tras publicar en Zenodo)
+**DOI del dataset:** 10.5281/zenodo.19144668 
