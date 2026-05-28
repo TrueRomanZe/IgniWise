@@ -33,32 +33,12 @@ for directory in [DATA_RAW, DATA_PROCESSED, DATA_PREDICTIONS, MODELS_DIR, LOGS_D
 # ============================================================================
 
 OPENWEATHER_API_KEY = os.getenv('OPENWEATHER_API_KEY')
-AEMET_API_KEY = os.getenv('AEMET_API_KEY')
 
 if not OPENWEATHER_API_KEY:
     raise ValueError(
         "OPENWEATHER_API_KEY no encontrada. "
         "Configura tu .env con la API key de OpenWeatherMap"
     )
-
-# ============================================================================
-# ZENODO URLS (Dataset publicado)
-# ============================================================================
-
-ZENODO_DATASET_URL = os.getenv(
-    'ZENODO_DATASET_URL',
-    'https://zenodo.org/records/19144668/files/training_data.csv'
-)
-
-ZENODO_MODEL_URL = os.getenv(
-    'ZENODO_MODEL_URL',
-    'https://zenodo.org/records/19144668/files/random_forest_v1.pkl'
-)
-
-ZENODO_GEODATA_URL = os.getenv(
-    'ZENODO_GEODATA_URL',
-    'https://zenodo.org/records/19144668/files/provincias_geo.geojson'
-)
 
 # ============================================================================
 # PARÁMETROS DEL MODELO
