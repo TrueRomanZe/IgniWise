@@ -2,6 +2,11 @@
 # IgniWise - Workflow de Actualización de Predicciones
 # ============================================================================
 # Ejecuta predict.py cada 6 horas para actualizar current_windows.json.
+#
+# El modelo y los datos geográficos se leen directamente del repositorio.
+# Solo se requiere OPENWEATHER_API_KEY como secret.
+#
+# Trigger: Cron cada 6 horas + Manual + Push a main
 # ============================================================================
 
 name: Actualizar Predicciones
@@ -52,23 +57,23 @@ jobs:
           pip install -r requirements.txt
 
       # ======================================================================
-      # PASO 4: Verificar que los archivos clave existen en el repo
+      # PASO 4: Verificar archivos clave
       # ======================================================================
       - name: 🔍 Verificar archivos
         run: |
           echo "Verificando archivos necesarios..."
-          
+
           if [ ! -f models/random_forest_v1.pkl ]; then
             echo "❌ models/random_forest_v1.pkl no encontrado"
             exit 1
           fi
-          echo "✓ Modelo encontrado: $(ls -lh models/random_forest_v1.pkl | awk '{print $5}')"
-          
+          echo "✓ Modelo: $(ls -lh models/random_forest_v1.pkl | awk '{print $5}')"
+
           if [ ! -f data/processed/provincias_geo.geojson ]; then
             echo "❌ data/processed/provincias_geo.geojson no encontrado"
             exit 1
           fi
-          echo "✓ Geodata encontrada: $(ls -lh data/processed/provincias_geo.geojson | awk '{print $5}')"
+          echo "✓ Geodata: $(ls -lh data/processed/provincias_geo.geojson | awk '{print $5}')"
 
       # ======================================================================
       # PASO 5: Generar predicciones
@@ -76,7 +81,6 @@ jobs:
       - name: 🔮 Generar predicciones
         env:
           OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
-          AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
         run: |
           echo "Generando predicciones para todas las provincias..."
           python src/modeling/predict.py
@@ -105,10 +109,10 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          
+
           git pull --rebase origin main || echo "Nothing to pull"
           git add data/predictions/current_windows.json
-          
+
           if git diff --staged --quiet; then
             echo "ℹ️  Sin cambios en predicciones"
           else
