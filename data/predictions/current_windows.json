@@ -1,1114 +1,277 @@
 {
   "metadata": {
-    "timestamp": "2026-09-27T11:21:04.955031",
-    "fecha_actualizacion": "27/09/2026 11:21",
+    "timestamp": "2026-09-27T16:21:31.436123",
+    "fecha_actualizacion": "27/09/2026 16:21",
     "total_provincias": 48,
     "version": "1.0"
   },
   "provincias": [
     {
       "provincia": "A Coruña",
-      "timestamp": "2026-09-27T11:20:58.417035",
+      "timestamp": "2026-09-27T16:21:25.079624",
       "coordenadas": {
         "lat": 43.3623,
         "lon": -8.4115
       },
       "clima": {
-        "temperatura": 18.5,
-        "humedad": 86,
-        "viento": 5.5,
-        "descripcion": "lluvia moderada",
+        "temperatura": 17.5,
+        "humedad": 96,
+        "viento": 3.7,
+        "descripcion": "lluvia ligera",
         "icono": "10d"
       },
       "indices": {
-        "fwi": 1.66,
-        "ffmc": 83.44,
-        "dmc": 6.49
+        "fwi": 1.4,
+        "ffmc": 83.67,
+        "dmc": 6.13
       },
       "prediccion": {
         "ventana": "SEGURA",
         "color": "#10b981",
-        "confianza": 94.6,
+        "confianza": 90.7,
         "probabilidades": {
-          "SEGURA": 94.6,
-          "MARGINAL": 4.1,
-          "PELIGROSA": 1.4
+          "SEGURA": 90.7,
+          "MARGINAL": 7.0,
+          "PELIGROSA": 2.3
         }
       },
       "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
     },
     {
       "provincia": "Álava",
-      "timestamp": "2026-09-27T11:20:58.554006",
+      "timestamp": "2026-09-27T16:21:25.219874",
       "coordenadas": {
         "lat": 42.8467,
         "lon": -2.6716
       },
       "clima": {
-        "temperatura": 24.5,
-        "humedad": 56,
-        "viento": 6.4,
+        "temperatura": 27.8,
+        "humedad": 42,
+        "viento": 13.0,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 3.67,
-        "ffmc": 86.69,
-        "dmc": 8.01
+        "fwi": 7.69,
+        "ffmc": 89.31,
+        "dmc": 8.99
       },
       "prediccion": {
         "ventana": "SEGURA",
         "color": "#10b981",
-        "confianza": 94.4,
+        "confianza": 46.8,
         "probabilidades": {
-          "SEGURA": 94.4,
-          "MARGINAL": 3.7,
-          "PELIGROSA": 1.9
+          "SEGURA": 46.8,
+          "MARGINAL": 46.2,
+          "PELIGROSA": 7.0
         }
       },
       "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
     },
     {
       "provincia": "Albacete",
-      "timestamp": "2026-09-27T11:20:58.683543",
+      "timestamp": "2026-09-27T16:21:25.349898",
       "coordenadas": {
         "lat": 38.9943,
         "lon": -1.8585
       },
       "clima": {
-        "temperatura": 28.1,
-        "humedad": 24,
+        "temperatura": 29.9,
+        "humedad": 27,
         "viento": 16.7,
-        "descripcion": "nubes",
-        "icono": "04d"
+        "descripcion": "nubes dispersas",
+        "icono": "03d"
       },
       "indices": {
-        "fwi": 12.42,
-        "ffmc": 91.79,
-        "dmc": 9.94
+        "fwi": 12.63,
+        "ffmc": 91.9,
+        "dmc": 10.03
       },
       "prediccion": {
-        "ventana": "PELIGROSA",
-        "color": "#ef4444",
-        "confianza": 65.0,
+        "ventana": "MARGINAL",
+        "color": "#f59e0b",
+        "confianza": 55.5,
         "probabilidades": {
-          "SEGURA": 3.6,
-          "MARGINAL": 31.4,
-          "PELIGROSA": 65.0
+          "SEGURA": 2.1,
+          "MARGINAL": 55.5,
+          "PELIGROSA": 42.4
         }
       },
-      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
+      "recomendacion": "Precaución: temperatura elevada, baja humedad. Solo personal experimentado con vigilancia constante."
     },
     {
       "provincia": "Alicante",
-      "timestamp": "2026-09-27T11:20:58.815129",
+      "timestamp": "2026-09-27T16:21:25.482436",
       "coordenadas": {
         "lat": 38.3452,
         "lon": -0.481
       },
       "clima": {
-        "temperatura": 27.6,
-        "humedad": 68,
-        "viento": 16.7,
-        "descripcion": "muy nuboso",
-        "icono": "04d"
+        "temperatura": 27.3,
+        "humedad": 70,
+        "viento": 20.4,
+        "descripcion": "algo de nubes",
+        "icono": "02d"
       },
       "indices": {
-        "fwi": 5.21,
-        "ffmc": 85.44,
-        "dmc": 7.63
+        "fwi": 5.92,
+        "ffmc": 85.06,
+        "dmc": 7.52
       },
       "prediccion": {
         "ventana": "SEGURA",
         "color": "#10b981",
-        "confianza": 91.8,
+        "confianza": 91.7,
         "probabilidades": {
-          "SEGURA": 91.8,
-          "MARGINAL": 6.4,
-          "PELIGROSA": 1.8
+          "SEGURA": 91.7,
+          "MARGINAL": 6.1,
+          "PELIGROSA": 2.1
         }
       },
       "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
     },
     {
       "provincia": "Almería",
-      "timestamp": "2026-09-27T11:20:58.948806",
+      "timestamp": "2026-09-27T16:21:25.619208",
       "coordenadas": {
         "lat": 36.841,
         "lon": -2.4676
       },
       "clima": {
-        "temperatura": 30.2,
-        "humedad": 46,
-        "viento": 29.6,
-        "descripcion": "algo de nubes",
-        "icono": "02d"
+        "temperatura": 29.1,
+        "humedad": 53,
+        "viento": 37.0,
+        "descripcion": "nubes dispersas",
+        "icono": "03d"
       },
       "indices": {
-        "fwi": 15.6,
-        "ffmc": 89.44,
-        "dmc": 9.01
+        "fwi": 17.77,
+        "ffmc": 88.17,
+        "dmc": 8.53
       },
       "prediccion": {
         "ventana": "MARGINAL",
         "color": "#f59e0b",
-        "confianza": 86.4,
+        "confianza": 90.2,
         "probabilidades": {
-          "SEGURA": 2.5,
-          "MARGINAL": 86.4,
-          "PELIGROSA": 11.1
+          "SEGURA": 1.1,
+          "MARGINAL": 90.2,
+          "PELIGROSA": 8.8
         }
       },
       "recomendacion": "Precaución: temperatura elevada, viento fuerte, FWI alto. Solo personal experimentado con vigilancia constante."
     },
     {
       "provincia": "Asturias",
-      "timestamp": "2026-09-27T11:20:59.088817",
+      "timestamp": "2026-09-27T16:21:25.794858",
       "coordenadas": {
         "lat": 43.3614,
         "lon": -5.8593
       },
       "clima": {
-        "temperatura": 21.4,
-        "humedad": 74,
-        "viento": 8.1,
+        "temperatura": 19.7,
+        "humedad": 88,
+        "viento": 14.5,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 2.86,
-        "ffmc": 84.94,
-        "dmc": 7.04
+        "fwi": 2.94,
+        "ffmc": 82.89,
+        "dmc": 6.44
       },
       "prediccion": {
         "ventana": "SEGURA",
         "color": "#10b981",
-        "confianza": 94.1,
+        "confianza": 95.1,
         "probabilidades": {
-          "SEGURA": 94.1,
-          "MARGINAL": 4.0,
-          "PELIGROSA": 1.9
+          "SEGURA": 95.1,
+          "MARGINAL": 3.4,
+          "PELIGROSA": 1.5
         }
       },
       "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
     },
     {
       "provincia": "Ávila",
-      "timestamp": "2026-09-27T11:20:59.225859",
+      "timestamp": "2026-09-27T16:21:25.928980",
       "coordenadas": {
         "lat": 40.657,
         "lon": -4.6981
       },
       "clima": {
-        "temperatura": 23.6,
-        "humedad": 32,
-        "viento": 15.4,
+        "temperatura": 25.9,
+        "humedad": 26,
+        "viento": 16.9,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 9.11,
-        "ffmc": 89.84,
-        "dmc": 8.99
+        "fwi": 11.46,
+        "ffmc": 91.11,
+        "dmc": 9.56
       },
       "prediccion": {
         "ventana": "MARGINAL",
         "color": "#f59e0b",
-        "confianza": 67.7,
+        "confianza": 56.0,
         "probabilidades": {
-          "SEGURA": 16.4,
-          "MARGINAL": 67.7,
-          "PELIGROSA": 15.8
+          "SEGURA": 10.5,
+          "MARGINAL": 56.0,
+          "PELIGROSA": 33.5
         }
       },
       "recomendacion": "Precaución: baja humedad. Solo personal experimentado con vigilancia constante."
     },
     {
       "provincia": "Badajoz",
-      "timestamp": "2026-09-27T11:20:59.365330",
+      "timestamp": "2026-09-27T16:21:26.063622",
       "coordenadas": {
         "lat": 38.8794,
         "lon": -6.9706
       },
       "clima": {
-        "temperatura": 29.9,
-        "humedad": 28,
-        "viento": 11.1,
-        "descripcion": "muy nuboso",
+        "temperatura": 33.9,
+        "humedad": 18,
+        "viento": 13.0,
+        "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 9.56,
-        "ffmc": 91.48,
-        "dmc": 9.98
+        "fwi": 13.43,
+        "ffmc": 93.43,
+        "dmc": 11.11
       },
       "prediccion": {
-        "ventana": "MARGINAL",
-        "color": "#f59e0b",
-        "confianza": 67.2,
+        "ventana": "PELIGROSA",
+        "color": "#ef4444",
+        "confianza": 78.4,
         "probabilidades": {
-          "SEGURA": 3.0,
-          "MARGINAL": 67.2,
-          "PELIGROSA": 29.8
+          "SEGURA": 0.3,
+          "MARGINAL": 21.3,
+          "PELIGROSA": 78.4
         }
       },
-      "recomendacion": "Precaución: temperatura elevada, baja humedad. Solo personal experimentado con vigilancia constante."
+      "recomendacion": "No realizar quemas. Razones: temperatura extrema, humedad muy baja. Riesgo de descontrol."
     },
     {
       "provincia": "Barcelona",
-      "timestamp": "2026-09-27T11:20:59.499250",
+      "timestamp": "2026-09-27T16:21:26.206974",
       "coordenadas": {
         "lat": 41.3851,
         "lon": 2.1734
       },
       "clima": {
-        "temperatura": 26.7,
-        "humedad": 62,
-        "viento": 13.0,
-        "descripcion": "muy nuboso",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 4.88,
-        "ffmc": 86.25,
-        "dmc": 7.88
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 93.9,
-        "probabilidades": {
-          "SEGURA": 93.9,
-          "MARGINAL": 4.1,
-          "PELIGROSA": 1.9
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Burgos",
-      "timestamp": "2026-09-27T11:20:59.635039",
-      "coordenadas": {
-        "lat": 42.3439,
-        "lon": -3.697
-      },
-      "clima": {
-        "temperatura": 23.2,
-        "humedad": 53,
+        "temperatura": 25.6,
+        "humedad": 66,
         "viento": 16.7,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 6.51,
-        "ffmc": 87.02,
-        "dmc": 8.03
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 90.3,
-        "probabilidades": {
-          "SEGURA": 90.3,
-          "MARGINAL": 7.7,
-          "PELIGROSA": 2.0
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Cáceres",
-      "timestamp": "2026-09-27T11:20:59.826016",
-      "coordenadas": {
-        "lat": 39.4753,
-        "lon": -6.3724
-      },
-      "clima": {
-        "temperatura": 28.2,
-        "humedad": 24,
-        "viento": 10.9,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 9.38,
-        "ffmc": 91.44,
-        "dmc": 9.96
-      },
-      "prediccion": {
-        "ventana": "PELIGROSA",
-        "color": "#ef4444",
-        "confianza": 56.0,
-        "probabilidades": {
-          "SEGURA": 4.1,
-          "MARGINAL": 39.9,
-          "PELIGROSA": 56.0
-        }
-      },
-      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
-    },
-    {
-      "provincia": "Cádiz",
-      "timestamp": "2026-09-27T11:20:59.965329",
-      "coordenadas": {
-        "lat": 36.527,
-        "lon": -6.2885
-      },
-      "clima": {
-        "temperatura": 27.1,
-        "humedad": 68,
-        "viento": 22.2,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 6.75,
-        "ffmc": 85.37,
-        "dmc": 7.61
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 81.5,
-        "probabilidades": {
-          "SEGURA": 81.5,
-          "MARGINAL": 15.8,
-          "PELIGROSA": 2.8
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Cantabria",
-      "timestamp": "2026-09-27T11:21:00.103657",
-      "coordenadas": {
-        "lat": 43.1828,
-        "lon": -3.9878
-      },
-      "clima": {
-        "temperatura": 24.2,
-        "humedad": 58,
-        "viento": 4.4,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 3.03,
-        "ffmc": 86.34,
-        "dmc": 7.89
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 91.3,
-        "probabilidades": {
-          "SEGURA": 91.3,
-          "MARGINAL": 5.7,
-          "PELIGROSA": 3.0
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Castellón",
-      "timestamp": "2026-09-27T11:21:00.237606",
-      "coordenadas": {
-        "lat": 39.9864,
-        "lon": -0.0513
-      },
-      "clima": {
-        "temperatura": 28,
-        "humedad": 65,
-        "viento": 10.4,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 4.08,
-        "ffmc": 85.97,
-        "dmc": 7.81
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 49.0,
-        "probabilidades": {
-          "SEGURA": 49.0,
-          "MARGINAL": 47.6,
-          "PELIGROSA": 3.4
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Ciudad Real",
-      "timestamp": "2026-09-27T11:21:00.383424",
-      "coordenadas": {
-        "lat": 38.9848,
-        "lon": -3.9273
-      },
-      "clima": {
-        "temperatura": 30.0,
-        "humedad": 30,
-        "viento": 3.7,
-        "descripcion": "nubes dispersas",
-        "icono": "03d"
-      },
-      "indices": {
-        "fwi": 6.07,
-        "ffmc": 90.57,
-        "dmc": 9.87
-      },
-      "prediccion": {
-        "ventana": "MARGINAL",
-        "color": "#f59e0b",
-        "confianza": 75.3,
-        "probabilidades": {
-          "SEGURA": 5.3,
-          "MARGINAL": 75.3,
-          "PELIGROSA": 19.4
-        }
-      },
-      "recomendacion": "Precaución: temperatura elevada, baja humedad. Solo personal experimentado con vigilancia constante."
-    },
-    {
-      "provincia": "Córdoba",
-      "timestamp": "2026-09-27T11:21:00.516907",
-      "coordenadas": {
-        "lat": 37.8882,
-        "lon": -4.7794
-      },
-      "clima": {
-        "temperatura": 30.7,
-        "humedad": 23,
-        "viento": 5.5,
-        "descripcion": "nubes dispersas",
-        "icono": "03d"
-      },
-      "indices": {
-        "fwi": 7.62,
-        "ffmc": 91.53,
-        "dmc": 10.36
-      },
-      "prediccion": {
-        "ventana": "PELIGROSA",
-        "color": "#ef4444",
-        "confianza": 59.9,
-        "probabilidades": {
-          "SEGURA": 1.7,
-          "MARGINAL": 38.4,
-          "PELIGROSA": 59.9
-        }
-      },
-      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
-    },
-    {
-      "provincia": "Cuenca",
-      "timestamp": "2026-09-27T11:21:00.650568",
-      "coordenadas": {
-        "lat": 40.0704,
-        "lon": -2.1374
-      },
-      "clima": {
-        "temperatura": 25.5,
-        "humedad": 23,
-        "viento": 14.1,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 10.27,
-        "ffmc": 91.14,
-        "dmc": 9.65
-      },
-      "prediccion": {
-        "ventana": "PELIGROSA",
-        "color": "#ef4444",
-        "confianza": 51.2,
-        "probabilidades": {
-          "SEGURA": 9.1,
-          "MARGINAL": 39.7,
-          "PELIGROSA": 51.2
-        }
-      },
-      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
-    },
-    {
-      "provincia": "Girona",
-      "timestamp": "2026-09-27T11:21:00.785148",
-      "coordenadas": {
-        "lat": 41.9794,
-        "lon": 2.8214
-      },
-      "clima": {
-        "temperatura": 25.4,
-        "humedad": 73,
-        "viento": 6.4,
-        "descripcion": "algo de nubes",
-        "icono": "02d"
-      },
-      "indices": {
-        "fwi": 2.67,
-        "ffmc": 85.05,
-        "dmc": 7.27
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 95.0,
-        "probabilidades": {
-          "SEGURA": 95.0,
-          "MARGINAL": 3.5,
-          "PELIGROSA": 1.6
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Granada",
-      "timestamp": "2026-09-27T11:21:00.919376",
-      "coordenadas": {
-        "lat": 37.1773,
-        "lon": -3.5986
-      },
-      "clima": {
-        "temperatura": 30.4,
-        "humedad": 24,
-        "viento": 14.8,
-        "descripcion": "cielo claro",
-        "icono": "01d"
-      },
-      "indices": {
-        "fwi": 12.28,
-        "ffmc": 92.25,
-        "dmc": 10.26
-      },
-      "prediccion": {
-        "ventana": "PELIGROSA",
-        "color": "#ef4444",
-        "confianza": 77.3,
-        "probabilidades": {
-          "SEGURA": 0.8,
-          "MARGINAL": 21.9,
-          "PELIGROSA": 77.3
-        }
-      },
-      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
-    },
-    {
-      "provincia": "Guadalajara",
-      "timestamp": "2026-09-27T11:21:01.056443",
-      "coordenadas": {
-        "lat": 40.6319,
-        "lon": -3.1679
-      },
-      "clima": {
-        "temperatura": 27.2,
-        "humedad": 32,
-        "viento": 6.5,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 6.39,
-        "ffmc": 90.09,
-        "dmc": 9.43
-      },
-      "prediccion": {
-        "ventana": "MARGINAL",
-        "color": "#f59e0b",
-        "confianza": 67.0,
-        "probabilidades": {
-          "SEGURA": 17.7,
-          "MARGINAL": 67.0,
-          "PELIGROSA": 15.3
-        }
-      },
-      "recomendacion": "Precaución: baja humedad. Solo personal experimentado con vigilancia constante."
-    },
-    {
-      "provincia": "Gipuzkoa",
-      "timestamp": "2026-09-27T11:21:01.197245",
-      "coordenadas": {
-        "lat": 43.2203,
-        "lon": -2.3242
-      },
-      "clima": {
-        "temperatura": 25,
-        "humedad": 57,
-        "viento": 6.7,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 3.7,
-        "ffmc": 86.64,
-        "dmc": 8.0
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 91.5,
-        "probabilidades": {
-          "SEGURA": 91.5,
-          "MARGINAL": 5.8,
-          "PELIGROSA": 2.7
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Huelva",
-      "timestamp": "2026-09-27T11:21:01.359656",
-      "coordenadas": {
-        "lat": 37.2614,
-        "lon": -6.9447
-      },
-      "clima": {
-        "temperatura": 26.6,
-        "humedad": 45,
-        "viento": 12.9,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 6.97,
-        "ffmc": 88.66,
-        "dmc": 8.71
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 70.6,
-        "probabilidades": {
-          "SEGURA": 70.6,
-          "MARGINAL": 24.3,
-          "PELIGROSA": 5.1
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Huesca",
-      "timestamp": "2026-09-27T11:21:01.493821",
-      "coordenadas": {
-        "lat": 42.1401,
-        "lon": -0.408
-      },
-      "clima": {
-        "temperatura": 25.4,
-        "humedad": 57,
-        "viento": 18.5,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 6.94,
-        "ffmc": 86.82,
-        "dmc": 8.03
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 86.8,
-        "probabilidades": {
-          "SEGURA": 86.8,
-          "MARGINAL": 11.0,
-          "PELIGROSA": 2.2
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Jaén",
-      "timestamp": "2026-09-27T11:21:01.633780",
-      "coordenadas": {
-        "lat": 37.7796,
-        "lon": -3.7849
-      },
-      "clima": {
-        "temperatura": 30.7,
-        "humedad": 23,
-        "viento": 6.4,
-        "descripcion": "algo de nubes",
-        "icono": "02d"
-      },
-      "indices": {
-        "fwi": 8.05,
-        "ffmc": 91.65,
-        "dmc": 10.36
-      },
-      "prediccion": {
-        "ventana": "PELIGROSA",
-        "color": "#ef4444",
-        "confianza": 61.6,
-        "probabilidades": {
-          "SEGURA": 0.9,
-          "MARGINAL": 37.4,
-          "PELIGROSA": 61.6
-        }
-      },
-      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
-    },
-    {
-      "provincia": "León",
-      "timestamp": "2026-09-27T11:21:01.770048",
-      "coordenadas": {
-        "lat": 42.5987,
-        "lon": -5.5671
-      },
-      "clima": {
-        "temperatura": 23.8,
-        "humedad": 36,
-        "viento": 5.5,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 5.05,
-        "ffmc": 88.91,
-        "dmc": 8.84
-      },
-      "prediccion": {
-        "ventana": "MARGINAL",
-        "color": "#f59e0b",
-        "confianza": 60.2,
-        "probabilidades": {
-          "SEGURA": 27.4,
-          "MARGINAL": 60.2,
-          "PELIGROSA": 12.4
-        }
-      },
-      "recomendacion": "Condiciones aceptables. Tomar precauciones estándar."
-    },
-    {
-      "provincia": "Lleida",
-      "timestamp": "2026-09-27T11:21:01.900764",
-      "coordenadas": {
-        "lat": 41.6175,
-        "lon": 0.62
-      },
-      "clima": {
-        "temperatura": 26.6,
-        "humedad": 62,
-        "viento": 9.3,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 3.98,
-        "ffmc": 86.21,
-        "dmc": 7.88
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 93.9,
-        "probabilidades": {
-          "SEGURA": 93.9,
-          "MARGINAL": 4.5,
-          "PELIGROSA": 1.6
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Lugo",
-      "timestamp": "2026-09-27T11:21:02.034810",
-      "coordenadas": {
-        "lat": 43.0097,
-        "lon": -7.5567
-      },
-      "clima": {
-        "temperatura": 20.6,
-        "humedad": 64,
-        "viento": 3.2,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 2.12,
-        "ffmc": 85.07,
-        "dmc": 7.39
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 94.9,
-        "probabilidades": {
-          "SEGURA": 94.9,
-          "MARGINAL": 3.7,
-          "PELIGROSA": 1.5
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Madrid",
-      "timestamp": "2026-09-27T11:21:02.167351",
-      "coordenadas": {
-        "lat": 40.4168,
-        "lon": -3.7038
-      },
-      "clima": {
-        "temperatura": 25.4,
-        "humedad": 36,
-        "viento": 9.0,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 6.51,
-        "ffmc": 89.45,
-        "dmc": 9.03
-      },
-      "prediccion": {
-        "ventana": "MARGINAL",
-        "color": "#f59e0b",
-        "confianza": 66.3,
-        "probabilidades": {
-          "SEGURA": 18.7,
-          "MARGINAL": 66.3,
-          "PELIGROSA": 15.0
-        }
-      },
-      "recomendacion": "Condiciones aceptables. Tomar precauciones estándar."
-    },
-    {
-      "provincia": "Málaga",
-      "timestamp": "2026-09-27T11:21:02.298201",
-      "coordenadas": {
-        "lat": 36.7213,
-        "lon": -4.4214
-      },
-      "clima": {
-        "temperatura": 27.4,
-        "humedad": 64,
-        "viento": 18.5,
-        "descripcion": "cielo claro",
-        "icono": "01d"
-      },
-      "indices": {
-        "fwi": 6.27,
-        "ffmc": 86.08,
-        "dmc": 7.83
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 90.3,
-        "probabilidades": {
-          "SEGURA": 90.3,
-          "MARGINAL": 7.6,
-          "PELIGROSA": 2.1
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Murcia",
-      "timestamp": "2026-09-27T11:21:02.431939",
-      "coordenadas": {
-        "lat": 37.9922,
-        "lon": -1.1307
-      },
-      "clima": {
-        "temperatura": 27.8,
-        "humedad": 63,
-        "viento": 14.8,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 5.39,
-        "ffmc": 86.27,
-        "dmc": 7.9
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 89.2,
-        "probabilidades": {
-          "SEGURA": 89.2,
-          "MARGINAL": 9.4,
-          "PELIGROSA": 1.4
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Navarra",
-      "timestamp": "2026-09-27T11:21:02.586307",
-      "coordenadas": {
-        "lat": 42.6954,
-        "lon": -1.6761
-      },
-      "clima": {
-        "temperatura": 24.9,
-        "humedad": 47,
-        "viento": 5.5,
-        "descripcion": "muy nuboso",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 4.28,
-        "ffmc": 87.87,
-        "dmc": 8.46
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 92.3,
-        "probabilidades": {
-          "SEGURA": 92.3,
-          "MARGINAL": 5.6,
-          "PELIGROSA": 2.1
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Ourense",
-      "timestamp": "2026-09-27T11:21:02.719537",
-      "coordenadas": {
-        "lat": 42.3367,
-        "lon": -7.864
-      },
-      "clima": {
-        "temperatura": 22.7,
-        "humedad": 67,
-        "viento": 5.0,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 2.42,
-        "ffmc": 85.05,
-        "dmc": 7.4
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 95.0,
-        "probabilidades": {
-          "SEGURA": 95.0,
-          "MARGINAL": 3.5,
-          "PELIGROSA": 1.5
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Palencia",
-      "timestamp": "2026-09-27T11:21:02.860210",
-      "coordenadas": {
-        "lat": 42.0096,
-        "lon": -4.5288
-      },
-      "clima": {
-        "temperatura": 25.5,
-        "humedad": 34,
-        "viento": 4.8,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 5.28,
-        "ffmc": 89.38,
-        "dmc": 9.13
-      },
-      "prediccion": {
-        "ventana": "MARGINAL",
-        "color": "#f59e0b",
-        "confianza": 61.8,
-        "probabilidades": {
-          "SEGURA": 22.4,
-          "MARGINAL": 61.8,
-          "PELIGROSA": 15.8
-        }
-      },
-      "recomendacion": "Precaución: baja humedad. Solo personal experimentado con vigilancia constante."
-    },
-    {
-      "provincia": "Las Palmas",
-      "timestamp": "2026-09-27T11:21:03.009099",
-      "coordenadas": {
-        "lat": 28.1236,
-        "lon": -15.4366
-      },
-      "clima": {
-        "temperatura": 24.6,
-        "humedad": 83,
-        "viento": 6.7,
-        "descripcion": "nubes",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 2.16,
-        "ffmc": 84.0,
-        "dmc": 6.78
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 94.8,
-        "probabilidades": {
-          "SEGURA": 94.8,
-          "MARGINAL": 3.9,
-          "PELIGROSA": 1.3
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "Pontevedra",
-      "timestamp": "2026-09-27T11:21:03.147083",
-      "coordenadas": {
-        "lat": 42.4321,
-        "lon": -8.6444
-      },
-      "clima": {
-        "temperatura": 22.5,
-        "humedad": 64,
-        "viento": 5.5,
-        "descripcion": "lluvia moderada",
-        "icono": "10d"
-      },
-      "indices": {
-        "fwi": 2.66,
-        "ffmc": 85.32,
-        "dmc": 7.51
-      },
-      "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 94.9,
-        "probabilidades": {
-          "SEGURA": 94.9,
-          "MARGINAL": 3.3,
-          "PELIGROSA": 1.7
-        }
-      },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
-    },
-    {
-      "provincia": "La Rioja",
-      "timestamp": "2026-09-27T11:21:03.288312",
-      "coordenadas": {
-        "lat": 42.2871,
-        "lon": -2.5396
-      },
-      "clima": {
-        "temperatura": 19.9,
-        "humedad": 55,
-        "viento": 13.1,
-        "descripcion": "muy nuboso",
-        "icono": "04d"
-      },
-      "indices": {
-        "fwi": 4.78,
-        "ffmc": 86.2,
-        "dmc": 7.68
+        "fwi": 5.22,
+        "ffmc": 85.47,
+        "dmc": 7.62
       },
       "prediccion": {
         "ventana": "SEGURA",
@@ -1123,155 +286,992 @@
       "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
     },
     {
-      "provincia": "Salamanca",
-      "timestamp": "2026-09-27T11:21:03.423343",
+      "provincia": "Burgos",
+      "timestamp": "2026-09-27T16:21:26.339853",
       "coordenadas": {
-        "lat": 40.9701,
-        "lon": -5.6635
+        "lat": 42.3439,
+        "lon": -3.697
       },
       "clima": {
-        "temperatura": 27.1,
-        "humedad": 24,
+        "temperatura": 25.2,
+        "humedad": 51,
+        "viento": 18.5,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 7.79,
+        "ffmc": 87.66,
+        "dmc": 8.29
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 83.0,
+        "probabilidades": {
+          "SEGURA": 83.0,
+          "MARGINAL": 14.4,
+          "PELIGROSA": 2.6
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Cáceres",
+      "timestamp": "2026-09-27T16:21:26.470286",
+      "coordenadas": {
+        "lat": 39.4753,
+        "lon": -6.3724
+      },
+      "clima": {
+        "temperatura": 29.8,
+        "humedad": 21,
+        "viento": 11.2,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 10.36,
+        "ffmc": 92.06,
+        "dmc": 10.34
+      },
+      "prediccion": {
+        "ventana": "PELIGROSA",
+        "color": "#ef4444",
+        "confianza": 71.5,
+        "probabilidades": {
+          "SEGURA": 1.1,
+          "MARGINAL": 27.4,
+          "PELIGROSA": 71.5
+        }
+      },
+      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
+    },
+    {
+      "provincia": "Cádiz",
+      "timestamp": "2026-09-27T16:21:26.607279",
+      "coordenadas": {
+        "lat": 36.527,
+        "lon": -6.2885
+      },
+      "clima": {
+        "temperatura": 25.2,
+        "humedad": 74,
+        "viento": 24.1,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 6.95,
+        "ffmc": 85.05,
+        "dmc": 7.22
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 79.1,
+        "probabilidades": {
+          "SEGURA": 79.1,
+          "MARGINAL": 18.6,
+          "PELIGROSA": 2.3
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Cantabria",
+      "timestamp": "2026-09-27T16:21:26.747319",
+      "coordenadas": {
+        "lat": 43.1828,
+        "lon": -3.9878
+      },
+      "clima": {
+        "temperatura": 23.7,
+        "humedad": 74,
+        "viento": 7.5,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 2.83,
+        "ffmc": 85.05,
+        "dmc": 7.15
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 94.9,
+        "probabilidades": {
+          "SEGURA": 94.9,
+          "MARGINAL": 3.6,
+          "PELIGROSA": 1.5
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Castellón",
+      "timestamp": "2026-09-27T16:21:26.886730",
+      "coordenadas": {
+        "lat": 39.9864,
+        "lon": -0.0513
+      },
+      "clima": {
+        "temperatura": 27.4,
+        "humedad": 66,
+        "viento": 11.2,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 4.09,
+        "ffmc": 85.73,
+        "dmc": 7.73
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 93.3,
+        "probabilidades": {
+          "SEGURA": 93.3,
+          "MARGINAL": 5.3,
+          "PELIGROSA": 1.4
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Ciudad Real",
+      "timestamp": "2026-09-27T16:21:27.016747",
+      "coordenadas": {
+        "lat": 38.9848,
+        "lon": -3.9273
+      },
+      "clima": {
+        "temperatura": 32.1,
+        "humedad": 21,
+        "viento": 6.4,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 8.63,
+        "ffmc": 92.09,
+        "dmc": 10.67
+      },
+      "prediccion": {
+        "ventana": "PELIGROSA",
+        "color": "#ef4444",
+        "confianza": 68.5,
+        "probabilidades": {
+          "SEGURA": 0.5,
+          "MARGINAL": 31.0,
+          "PELIGROSA": 68.5
+        }
+      },
+      "recomendacion": "No realizar quemas. Razones: temperatura extrema, humedad muy baja. Riesgo de descontrol."
+    },
+    {
+      "provincia": "Córdoba",
+      "timestamp": "2026-09-27T16:21:27.149445",
+      "coordenadas": {
+        "lat": 37.8882,
+        "lon": -4.7794
+      },
+      "clima": {
+        "temperatura": 32.7,
+        "humedad": 19,
+        "viento": 16.7,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 15.27,
+        "ffmc": 93.37,
+        "dmc": 10.88
+      },
+      "prediccion": {
+        "ventana": "PELIGROSA",
+        "color": "#ef4444",
+        "confianza": 79.2,
+        "probabilidades": {
+          "SEGURA": 0.5,
+          "MARGINAL": 20.3,
+          "PELIGROSA": 79.2
+        }
+      },
+      "recomendacion": "No realizar quemas. Razones: temperatura extrema, humedad muy baja. Riesgo de descontrol."
+    },
+    {
+      "provincia": "Cuenca",
+      "timestamp": "2026-09-27T16:21:27.285642",
+      "coordenadas": {
+        "lat": 40.0704,
+        "lon": -2.1374
+      },
+      "clima": {
+        "temperatura": 26.1,
+        "humedad": 20,
+        "viento": 14.2,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 10.79,
+        "ffmc": 91.48,
+        "dmc": 9.87
+      },
+      "prediccion": {
+        "ventana": "PELIGROSA",
+        "color": "#ef4444",
+        "confianza": 52.5,
+        "probabilidades": {
+          "SEGURA": 8.6,
+          "MARGINAL": 38.9,
+          "PELIGROSA": 52.5
+        }
+      },
+      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
+    },
+    {
+      "provincia": "Girona",
+      "timestamp": "2026-09-27T16:21:27.419834",
+      "coordenadas": {
+        "lat": 41.9794,
+        "lon": 2.8214
+      },
+      "clima": {
+        "temperatura": 24.7,
+        "humedad": 70,
+        "viento": 20.4,
+        "descripcion": "muy nuboso",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 5.86,
+        "ffmc": 85.05,
+        "dmc": 7.38
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 93.7,
+        "probabilidades": {
+          "SEGURA": 93.7,
+          "MARGINAL": 4.7,
+          "PELIGROSA": 1.6
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Granada",
+      "timestamp": "2026-09-27T16:21:27.553127",
+      "coordenadas": {
+        "lat": 37.1773,
+        "lon": -3.5986
+      },
+      "clima": {
+        "temperatura": 29.3,
+        "humedad": 37,
+        "viento": 13.0,
+        "descripcion": "muy nuboso",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 8.82,
+        "ffmc": 90.3,
+        "dmc": 9.41
+      },
+      "prediccion": {
+        "ventana": "MARGINAL",
+        "color": "#f59e0b",
+        "confianza": 79.3,
+        "probabilidades": {
+          "SEGURA": 4.3,
+          "MARGINAL": 79.3,
+          "PELIGROSA": 16.4
+        }
+      },
+      "recomendacion": "Precaución: temperatura elevada. Solo personal experimentado con vigilancia constante."
+    },
+    {
+      "provincia": "Guadalajara",
+      "timestamp": "2026-09-27T16:21:27.685359",
+      "coordenadas": {
+        "lat": 40.6319,
+        "lon": -3.1679
+      },
+      "clima": {
+        "temperatura": 29.7,
+        "humedad": 22,
+        "viento": 3.2,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 6.28,
+        "ffmc": 90.9,
+        "dmc": 10.28
+      },
+      "prediccion": {
+        "ventana": "PELIGROSA",
+        "color": "#ef4444",
+        "confianza": 49.6,
+        "probabilidades": {
+          "SEGURA": 3.1,
+          "MARGINAL": 47.3,
+          "PELIGROSA": 49.6
+        }
+      },
+      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
+    },
+    {
+      "provincia": "Gipuzkoa",
+      "timestamp": "2026-09-27T16:21:27.823165",
+      "coordenadas": {
+        "lat": 43.2203,
+        "lon": -2.3242
+      },
+      "clima": {
+        "temperatura": 20.7,
+        "humedad": 61,
+        "viento": 9.5,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 3.5,
+        "ffmc": 85.51,
+        "dmc": 7.52
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 92.9,
+        "probabilidades": {
+          "SEGURA": 92.9,
+          "MARGINAL": 5.5,
+          "PELIGROSA": 1.6
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Huelva",
+      "timestamp": "2026-09-27T16:21:27.965867",
+      "coordenadas": {
+        "lat": 37.2614,
+        "lon": -6.9447
+      },
+      "clima": {
+        "temperatura": 24.4,
+        "humedad": 62,
+        "viento": 9.6,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 3.82,
+        "ffmc": 85.88,
+        "dmc": 7.72
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 92.2,
+        "probabilidades": {
+          "SEGURA": 92.2,
+          "MARGINAL": 6.3,
+          "PELIGROSA": 1.5
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Huesca",
+      "timestamp": "2026-09-27T16:21:28.100056",
+      "coordenadas": {
+        "lat": 42.1401,
+        "lon": -0.408
+      },
+      "clima": {
+        "temperatura": 26.3,
+        "humedad": 50,
+        "viento": 16.7,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 7.52,
+        "ffmc": 87.97,
+        "dmc": 8.44
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 80.3,
+        "probabilidades": {
+          "SEGURA": 80.3,
+          "MARGINAL": 17.4,
+          "PELIGROSA": 2.4
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Jaén",
+      "timestamp": "2026-09-27T16:21:28.230551",
+      "coordenadas": {
+        "lat": 37.7796,
+        "lon": -3.7849
+      },
+      "clima": {
+        "temperatura": 31.9,
+        "humedad": 23,
+        "viento": 9.6,
+        "descripcion": "muy nuboso",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 10.09,
+        "ffmc": 92.31,
+        "dmc": 10.52
+      },
+      "prediccion": {
+        "ventana": "PELIGROSA",
+        "color": "#ef4444",
+        "confianza": 76.7,
+        "probabilidades": {
+          "SEGURA": 0.5,
+          "MARGINAL": 22.8,
+          "PELIGROSA": 76.7
+        }
+      },
+      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
+    },
+    {
+      "provincia": "León",
+      "timestamp": "2026-09-27T16:21:28.364163",
+      "coordenadas": {
+        "lat": 42.5987,
+        "lon": -5.5671
+      },
+      "clima": {
+        "temperatura": 27.7,
+        "humedad": 96,
         "viento": 7.4,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 7.46,
-        "ffmc": 90.86,
-        "dmc": 9.82
+        "fwi": 1.84,
+        "ffmc": 83.15,
+        "dmc": 6.21
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 90.2,
+        "probabilidades": {
+          "SEGURA": 90.2,
+          "MARGINAL": 8.3,
+          "PELIGROSA": 1.5
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Lleida",
+      "timestamp": "2026-09-27T16:21:28.496313",
+      "coordenadas": {
+        "lat": 41.6175,
+        "lon": 0.62
+      },
+      "clima": {
+        "temperatura": 26.6,
+        "humedad": 62,
+        "viento": 18.5,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 6.43,
+        "ffmc": 86.26,
+        "dmc": 7.88
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 90.1,
+        "probabilidades": {
+          "SEGURA": 90.1,
+          "MARGINAL": 7.6,
+          "PELIGROSA": 2.3
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Lugo",
+      "timestamp": "2026-09-27T16:21:28.626613",
+      "coordenadas": {
+        "lat": 43.0097,
+        "lon": -7.5567
+      },
+      "clima": {
+        "temperatura": 20.0,
+        "humedad": 77,
+        "viento": 9.6,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 2.85,
+        "ffmc": 84.41,
+        "dmc": 6.86
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 95.4,
+        "probabilidades": {
+          "SEGURA": 95.4,
+          "MARGINAL": 3.4,
+          "PELIGROSA": 1.2
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Madrid",
+      "timestamp": "2026-09-27T16:21:28.756017",
+      "coordenadas": {
+        "lat": 40.4168,
+        "lon": -3.7038
+      },
+      "clima": {
+        "temperatura": 28.8,
+        "humedad": 28,
+        "viento": 9.0,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 8.24,
+        "ffmc": 91.07,
+        "dmc": 9.84
       },
       "prediccion": {
         "ventana": "MARGINAL",
         "color": "#f59e0b",
-        "confianza": 46.8,
+        "confianza": 68.6,
         "probabilidades": {
-          "SEGURA": 13.0,
-          "MARGINAL": 46.8,
-          "PELIGROSA": 40.2
+          "SEGURA": 4.9,
+          "MARGINAL": 68.6,
+          "PELIGROSA": 26.5
+        }
+      },
+      "recomendacion": "Precaución: temperatura elevada, baja humedad. Solo personal experimentado con vigilancia constante."
+    },
+    {
+      "provincia": "Málaga",
+      "timestamp": "2026-09-27T16:21:28.888003",
+      "coordenadas": {
+        "lat": 36.7213,
+        "lon": -4.4214
+      },
+      "clima": {
+        "temperatura": 25.3,
+        "humedad": 64,
+        "viento": 13.0,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 4.48,
+        "ffmc": 85.73,
+        "dmc": 7.69
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 94.5,
+        "probabilidades": {
+          "SEGURA": 94.5,
+          "MARGINAL": 4.1,
+          "PELIGROSA": 1.5
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Murcia",
+      "timestamp": "2026-09-27T16:21:29.023516",
+      "coordenadas": {
+        "lat": 37.9922,
+        "lon": -1.1307
+      },
+      "clima": {
+        "temperatura": 28.3,
+        "humedad": 57,
+        "viento": 20.9,
+        "descripcion": "cielo claro",
+        "icono": "01d"
+      },
+      "indices": {
+        "fwi": 8.33,
+        "ffmc": 87.31,
+        "dmc": 8.25
+      },
+      "prediccion": {
+        "ventana": "MARGINAL",
+        "color": "#f59e0b",
+        "confianza": 69.9,
+        "probabilidades": {
+          "SEGURA": 24.8,
+          "MARGINAL": 69.9,
+          "PELIGROSA": 5.3
+        }
+      },
+      "recomendacion": "Precaución: temperatura elevada. Solo personal experimentado con vigilancia constante."
+    },
+    {
+      "provincia": "Navarra",
+      "timestamp": "2026-09-27T16:21:29.159941",
+      "coordenadas": {
+        "lat": 42.6954,
+        "lon": -1.6761
+      },
+      "clima": {
+        "temperatura": 28.8,
+        "humedad": 28,
+        "viento": 18.5,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 13.08,
+        "ffmc": 91.61,
+        "dmc": 9.84
+      },
+      "prediccion": {
+        "ventana": "MARGINAL",
+        "color": "#f59e0b",
+        "confianza": 59.5,
+        "probabilidades": {
+          "SEGURA": 5.0,
+          "MARGINAL": 59.5,
+          "PELIGROSA": 35.6
+        }
+      },
+      "recomendacion": "Precaución: temperatura elevada, baja humedad. Solo personal experimentado con vigilancia constante."
+    },
+    {
+      "provincia": "Ourense",
+      "timestamp": "2026-09-27T16:21:29.296960",
+      "coordenadas": {
+        "lat": 42.3367,
+        "lon": -7.864
+      },
+      "clima": {
+        "temperatura": 22.6,
+        "humedad": 70,
+        "viento": 8.8,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 3.09,
+        "ffmc": 85.05,
+        "dmc": 7.27
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 95.0,
+        "probabilidades": {
+          "SEGURA": 95.0,
+          "MARGINAL": 3.4,
+          "PELIGROSA": 1.5
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Palencia",
+      "timestamp": "2026-09-27T16:21:29.430570",
+      "coordenadas": {
+        "lat": 42.0096,
+        "lon": -4.5288
+      },
+      "clima": {
+        "temperatura": 27.2,
+        "humedad": 31,
+        "viento": 8.1,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 7.09,
+        "ffmc": 90.31,
+        "dmc": 9.47
+      },
+      "prediccion": {
+        "ventana": "MARGINAL",
+        "color": "#f59e0b",
+        "confianza": 61.8,
+        "probabilidades": {
+          "SEGURA": 18.8,
+          "MARGINAL": 61.8,
+          "PELIGROSA": 19.4
         }
       },
       "recomendacion": "Precaución: baja humedad. Solo personal experimentado con vigilancia constante."
     },
     {
+      "provincia": "Las Palmas",
+      "timestamp": "2026-09-27T16:21:29.565943",
+      "coordenadas": {
+        "lat": 28.1236,
+        "lon": -15.4366
+      },
+      "clima": {
+        "temperatura": 27.7,
+        "humedad": 53,
+        "viento": 6.4,
+        "descripcion": "lluvia ligera",
+        "icono": "10d"
+      },
+      "indices": {
+        "fwi": 4.32,
+        "ffmc": 87.6,
+        "dmc": 8.41
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 88.6,
+        "probabilidades": {
+          "SEGURA": 88.6,
+          "MARGINAL": 9.4,
+          "PELIGROSA": 2.1
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Pontevedra",
+      "timestamp": "2026-09-27T16:21:29.698893",
+      "coordenadas": {
+        "lat": 42.4321,
+        "lon": -8.6444
+      },
+      "clima": {
+        "temperatura": 23.5,
+        "humedad": 73,
+        "viento": 1.9,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 1.89,
+        "ffmc": 85.05,
+        "dmc": 7.18
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 93.7,
+        "probabilidades": {
+          "SEGURA": 93.7,
+          "MARGINAL": 4.3,
+          "PELIGROSA": 2.1
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "La Rioja",
+      "timestamp": "2026-09-27T16:21:29.829007",
+      "coordenadas": {
+        "lat": 42.2871,
+        "lon": -2.5396
+      },
+      "clima": {
+        "temperatura": 22.9,
+        "humedad": 44,
+        "viento": 14.1,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 6.78,
+        "ffmc": 88.14,
+        "dmc": 8.39
+      },
+      "prediccion": {
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 86.0,
+        "probabilidades": {
+          "SEGURA": 86.0,
+          "MARGINAL": 10.9,
+          "PELIGROSA": 3.0
+        }
+      },
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+    },
+    {
+      "provincia": "Salamanca",
+      "timestamp": "2026-09-27T16:21:29.965820",
+      "coordenadas": {
+        "lat": 40.9701,
+        "lon": -5.6635
+      },
+      "clima": {
+        "temperatura": 26.6,
+        "humedad": 24,
+        "viento": 13.0,
+        "descripcion": "nubes",
+        "icono": "04d"
+      },
+      "indices": {
+        "fwi": 9.9,
+        "ffmc": 91.21,
+        "dmc": 9.74
+      },
+      "prediccion": {
+        "ventana": "PELIGROSA",
+        "color": "#ef4444",
+        "confianza": 47.8,
+        "probabilidades": {
+          "SEGURA": 10.1,
+          "MARGINAL": 42.1,
+          "PELIGROSA": 47.8
+        }
+      },
+      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
+    },
+    {
       "provincia": "Segovia",
-      "timestamp": "2026-09-27T11:21:03.563185",
+      "timestamp": "2026-09-27T16:21:30.096886",
       "coordenadas": {
         "lat": 40.9429,
         "lon": -4.1088
       },
       "clima": {
-        "temperatura": 24.1,
-        "humedad": 33,
-        "viento": 9.3,
-        "descripcion": "muy nuboso",
+        "temperatura": 26.4,
+        "humedad": 27,
+        "viento": 20.3,
+        "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 6.66,
-        "ffmc": 89.55,
-        "dmc": 9.01
+        "fwi": 13.36,
+        "ffmc": 91.26,
+        "dmc": 9.58
       },
       "prediccion": {
         "ventana": "MARGINAL",
         "color": "#f59e0b",
-        "confianza": 65.1,
+        "confianza": 59.4,
         "probabilidades": {
-          "SEGURA": 19.0,
-          "MARGINAL": 65.1,
-          "PELIGROSA": 15.9
+          "SEGURA": 10.7,
+          "MARGINAL": 59.4,
+          "PELIGROSA": 29.9
         }
       },
       "recomendacion": "Precaución: baja humedad. Solo personal experimentado con vigilancia constante."
     },
     {
       "provincia": "Sevilla",
-      "timestamp": "2026-09-27T11:21:03.693243",
+      "timestamp": "2026-09-27T16:21:30.229655",
       "coordenadas": {
         "lat": 37.3891,
         "lon": -5.9845
       },
       "clima": {
-        "temperatura": 30.4,
-        "humedad": 30,
-        "viento": 9.3,
-        "descripcion": "muy nuboso",
+        "temperatura": 29.1,
+        "humedad": 51,
+        "viento": 20.4,
+        "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 8.56,
-        "ffmc": 91.23,
-        "dmc": 9.93
+        "fwi": 9.38,
+        "ffmc": 88.36,
+        "dmc": 8.63
       },
       "prediccion": {
         "ventana": "MARGINAL",
         "color": "#f59e0b",
-        "confianza": 73.3,
+        "confianza": 74.4,
         "probabilidades": {
-          "SEGURA": 2.2,
-          "MARGINAL": 73.3,
-          "PELIGROSA": 24.4
+          "SEGURA": 20.2,
+          "MARGINAL": 74.4,
+          "PELIGROSA": 5.3
         }
       },
-      "recomendacion": "Precaución: temperatura elevada, baja humedad. Solo personal experimentado con vigilancia constante."
+      "recomendacion": "Precaución: temperatura elevada. Solo personal experimentado con vigilancia constante."
     },
     {
       "provincia": "Soria",
-      "timestamp": "2026-09-27T11:21:03.828956",
+      "timestamp": "2026-09-27T16:21:30.362743",
       "coordenadas": {
         "lat": 41.7665,
         "lon": -2.479
       },
       "clima": {
-        "temperatura": 27.8,
-        "humedad": 24,
-        "viento": 3.2,
-        "descripcion": "muy nuboso",
+        "temperatura": 27.5,
+        "humedad": 15,
+        "viento": 8.1,
+        "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 5.76,
-        "ffmc": 90.38,
-        "dmc": 9.9
+        "fwi": 8.2,
+        "ffmc": 91.23,
+        "dmc": 10.33
       },
       "prediccion": {
-        "ventana": "MARGINAL",
-        "color": "#f59e0b",
-        "confianza": 48.7,
+        "ventana": "PELIGROSA",
+        "color": "#ef4444",
+        "confianza": 46.2,
         "probabilidades": {
-          "SEGURA": 15.2,
-          "MARGINAL": 48.7,
-          "PELIGROSA": 36.1
+          "SEGURA": 11.6,
+          "MARGINAL": 42.2,
+          "PELIGROSA": 46.2
         }
       },
-      "recomendacion": "Precaución: baja humedad. Solo personal experimentado con vigilancia constante."
+      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
     },
     {
       "provincia": "Tarragona",
-      "timestamp": "2026-09-27T11:21:03.982554",
+      "timestamp": "2026-09-27T16:21:30.497229",
       "coordenadas": {
         "lat": 41.1189,
         "lon": 1.2445
       },
       "clima": {
-        "temperatura": 26.8,
-        "humedad": 67,
-        "viento": 13.0,
-        "descripcion": "muy nuboso",
+        "temperatura": 26.2,
+        "humedad": 70,
+        "viento": 11.1,
+        "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 4.31,
-        "ffmc": 85.47,
-        "dmc": 7.64
+        "fwi": 3.62,
+        "ffmc": 85.05,
+        "dmc": 7.46
       },
       "prediccion": {
         "ventana": "SEGURA",
         "color": "#10b981",
-        "confianza": 94.1,
+        "confianza": 94.8,
         "probabilidades": {
-          "SEGURA": 94.1,
-          "MARGINAL": 4.4,
+          "SEGURA": 94.8,
+          "MARGINAL": 3.7,
           "PELIGROSA": 1.5
         }
       },
@@ -1279,220 +1279,220 @@
     },
     {
       "provincia": "Teruel",
-      "timestamp": "2026-09-27T11:21:04.118799",
+      "timestamp": "2026-09-27T16:21:30.628085",
       "coordenadas": {
         "lat": 40.3456,
         "lon": -1.1065
       },
       "clima": {
-        "temperatura": 26.6,
-        "humedad": 22,
-        "viento": 20.4,
+        "temperatura": 28.6,
+        "humedad": 28,
+        "viento": 22.2,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 14.39,
-        "ffmc": 91.84,
-        "dmc": 9.85
+        "fwi": 15.24,
+        "ffmc": 91.69,
+        "dmc": 9.81
       },
       "prediccion": {
-        "ventana": "PELIGROSA",
-        "color": "#ef4444",
-        "confianza": 59.0,
+        "ventana": "MARGINAL",
+        "color": "#f59e0b",
+        "confianza": 56.1,
         "probabilidades": {
-          "SEGURA": 6.9,
-          "MARGINAL": 34.0,
-          "PELIGROSA": 59.0
+          "SEGURA": 3.4,
+          "MARGINAL": 56.1,
+          "PELIGROSA": 40.4
         }
       },
-      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
+      "recomendacion": "Precaución: temperatura elevada, baja humedad, FWI alto. Solo personal experimentado con vigilancia constante."
     },
     {
       "provincia": "Toledo",
-      "timestamp": "2026-09-27T11:21:04.248330",
+      "timestamp": "2026-09-27T16:21:30.761452",
       "coordenadas": {
         "lat": 39.8628,
         "lon": -4.0273
       },
       "clima": {
-        "temperatura": 30.5,
-        "humedad": 27,
-        "viento": 1.8,
+        "temperatura": 31.6,
+        "humedad": 23,
+        "viento": 10.9,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 5.5,
-        "ffmc": 90.49,
-        "dmc": 10.1
+        "fwi": 10.65,
+        "ffmc": 92.35,
+        "dmc": 10.48
       },
       "prediccion": {
-        "ventana": "MARGINAL",
-        "color": "#f59e0b",
-        "confianza": 71.8,
+        "ventana": "PELIGROSA",
+        "color": "#ef4444",
+        "confianza": 76.9,
         "probabilidades": {
-          "SEGURA": 5.1,
-          "MARGINAL": 71.8,
-          "PELIGROSA": 23.1
+          "SEGURA": 1.1,
+          "MARGINAL": 22.0,
+          "PELIGROSA": 76.9
         }
       },
-      "recomendacion": "Precaución: temperatura elevada, baja humedad. Solo personal experimentado con vigilancia constante."
+      "recomendacion": "No realizar quemas. Razones: humedad muy baja. Riesgo de descontrol."
     },
     {
       "provincia": "Valencia",
-      "timestamp": "2026-09-27T11:21:04.387943",
+      "timestamp": "2026-09-27T16:21:30.900238",
       "coordenadas": {
         "lat": 39.4699,
         "lon": -0.3763
       },
       "clima": {
         "temperatura": 27.1,
-        "humedad": 66,
-        "viento": 9.3,
+        "humedad": 65,
+        "viento": 16.7,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 3.63,
-        "ffmc": 85.67,
-        "dmc": 7.71
+        "fwi": 5.55,
+        "ffmc": 85.86,
+        "dmc": 7.76
       },
       "prediccion": {
         "ventana": "SEGURA",
         "color": "#10b981",
-        "confianza": 93.9,
+        "confianza": 93.7,
         "probabilidades": {
-          "SEGURA": 93.9,
-          "MARGINAL": 4.5,
-          "PELIGROSA": 1.6
+          "SEGURA": 93.7,
+          "MARGINAL": 4.9,
+          "PELIGROSA": 1.4
         }
       },
       "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
     },
     {
       "provincia": "Valladolid",
-      "timestamp": "2026-09-27T11:21:04.534405",
+      "timestamp": "2026-09-27T16:21:31.033596",
       "coordenadas": {
         "lat": 41.6528,
         "lon": -4.7245
       },
       "clima": {
-        "temperatura": 24.9,
-        "humedad": 29,
-        "viento": 5.5,
+        "temperatura": 26.6,
+        "humedad": 41,
+        "viento": 14.8,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 5.82,
-        "ffmc": 89.79,
-        "dmc": 9.29
+        "fwi": 8.25,
+        "ffmc": 89.26,
+        "dmc": 8.91
       },
       "prediccion": {
-        "ventana": "MARGINAL",
-        "color": "#f59e0b",
-        "confianza": 61.8,
+        "ventana": "SEGURA",
+        "color": "#10b981",
+        "confianza": 45.7,
         "probabilidades": {
-          "SEGURA": 20.8,
-          "MARGINAL": 61.8,
-          "PELIGROSA": 17.4
+          "SEGURA": 45.7,
+          "MARGINAL": 45.2,
+          "PELIGROSA": 9.1
         }
       },
-      "recomendacion": "Precaución: baja humedad. Solo personal experimentado con vigilancia constante."
+      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
     },
     {
       "provincia": "Vizcaya",
-      "timestamp": "2026-09-27T11:21:04.671333",
+      "timestamp": "2026-09-27T16:21:31.171793",
       "coordenadas": {
         "lat": 43.263,
         "lon": -2.935
       },
       "clima": {
-        "temperatura": 26.1,
-        "humedad": 59,
-        "viento": 5.5,
+        "temperatura": 23.2,
+        "humedad": 70,
+        "viento": 17.7,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 3.38,
-        "ffmc": 86.51,
-        "dmc": 7.98
+        "fwi": 5.1,
+        "ffmc": 85.05,
+        "dmc": 7.3
       },
       "prediccion": {
         "ventana": "SEGURA",
         "color": "#10b981",
-        "confianza": 94.3,
+        "confianza": 94.2,
         "probabilidades": {
-          "SEGURA": 94.3,
-          "MARGINAL": 4.0,
-          "PELIGROSA": 1.7
+          "SEGURA": 94.2,
+          "MARGINAL": 4.2,
+          "PELIGROSA": 1.5
         }
       },
       "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
     },
     {
       "provincia": "Zamora",
-      "timestamp": "2026-09-27T11:21:04.806554",
+      "timestamp": "2026-09-27T16:21:31.302741",
       "coordenadas": {
         "lat": 41.5035,
         "lon": -5.7447
       },
       "clima": {
-        "temperatura": 24.9,
-        "humedad": 31,
-        "viento": 3.5,
+        "temperatura": 26.4,
+        "humedad": 29,
+        "viento": 5.9,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 4.92,
-        "ffmc": 89.37,
-        "dmc": 9.19
+        "fwi": 6.24,
+        "ffmc": 90.14,
+        "dmc": 9.47
       },
       "prediccion": {
         "ventana": "MARGINAL",
         "color": "#f59e0b",
-        "confianza": 61.3,
+        "confianza": 59.7,
         "probabilidades": {
-          "SEGURA": 23.1,
-          "MARGINAL": 61.3,
-          "PELIGROSA": 15.6
+          "SEGURA": 19.4,
+          "MARGINAL": 59.7,
+          "PELIGROSA": 20.9
         }
       },
       "recomendacion": "Precaución: baja humedad. Solo personal experimentado con vigilancia constante."
     },
     {
       "provincia": "Zaragoza",
-      "timestamp": "2026-09-27T11:21:04.954503",
+      "timestamp": "2026-09-27T16:21:31.435761",
       "coordenadas": {
         "lat": 41.6488,
         "lon": -0.8891
       },
       "clima": {
-        "temperatura": 26.7,
-        "humedad": 45,
-        "viento": 16.7,
+        "temperatura": 30.5,
+        "humedad": 29,
+        "viento": 22.2,
         "descripcion": "nubes",
         "icono": "04d"
       },
       "indices": {
-        "fwi": 8.37,
-        "ffmc": 88.75,
-        "dmc": 8.72
+        "fwi": 15.82,
+        "ffmc": 91.98,
+        "dmc": 9.99
       },
       "prediccion": {
-        "ventana": "SEGURA",
-        "color": "#10b981",
-        "confianza": 69.4,
+        "ventana": "MARGINAL",
+        "color": "#f59e0b",
+        "confianza": 55.1,
         "probabilidades": {
-          "SEGURA": 69.4,
-          "MARGINAL": 26.0,
-          "PELIGROSA": 4.5
+          "SEGURA": 1.0,
+          "MARGINAL": 55.1,
+          "PELIGROSA": 43.9
         }
       },
-      "recomendacion": "Condiciones favorables para quemas prescritas. Proceder con protocolos estándar."
+      "recomendacion": "Precaución: temperatura elevada, baja humedad, FWI alto. Solo personal experimentado con vigilancia constante."
     }
   ]
 }
